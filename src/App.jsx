@@ -1,0 +1,1080 @@
+import { Button } from "@/components/ui/button";
+import { Mail, Github, MapPin, Phone, Bike, ArrowLeft, Briefcase, Code, BookOpen, Award, Heart, Database, Zap } from "lucide-react";
+import { useState } from "react";
+
+export default function Portfolio() {
+  const [currentPage, setCurrentPage] = useState("home");
+  const [selectedRole, setSelectedRole] = useState("qa"); // Default role: QA
+
+  const pages = {
+    home: "HOME",
+    experience: "EXPERIENCE",
+    projects: "PROJECTS & CASE STUDIES",
+    education: "EDUCATION",
+    skills: "SKILLS BY ROLE",
+    qaArtifacts: "QA ARTIFACTS",
+    infrastructure: "INFRASTRUCTURE & NETWORKING",
+    contact: "CONTACT & AVAILABILITY"
+  };
+
+  return (
+    <div style={{ background: "#000000", color: "#ffffff", minHeight: "100vh", overflow: "hidden" }}>
+      {/* Animated background blobs */}
+      <div style={{ position: "fixed", inset: 0, overflow: "hidden", pointerEvents: "none", zIndex: 0 }}>
+        <div style={{
+          position: "absolute", top: 0, left: 0, width: "400px", height: "400px",
+          background: "linear-gradient(135deg, #06b6d4, #3b82f6)", opacity: 0.15,
+          borderRadius: "50%", filter: "blur(60px)", animation: "pulse 4s ease-in-out infinite"
+        }}></div>
+        <div style={{
+          position: "absolute", top: "30%", right: 0, width: "400px", height: "400px",
+          background: "linear-gradient(135deg, #a855f7, #ec4899)", opacity: 0.12,
+          borderRadius: "50%", filter: "blur(60px)", animation: "pulse 4s ease-in-out infinite 2s"
+        }}></div>
+        <div style={{
+          position: "absolute", bottom: 0, left: "50%", width: "400px", height: "400px",
+          background: "linear-gradient(135deg, #06b6d4, #3b82f6)", opacity: 0.08,
+          borderRadius: "50%", filter: "blur(60px)", animation: "pulse 4s ease-in-out infinite 4s"
+        }}></div>
+      </div>
+
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 0.08; }
+          50% { opacity: 0.2; }
+        }
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+
+      <div style={{ position: "relative", maxWidth: "1200px", margin: "0 auto", zIndex: 1, animation: "slideIn 0.5s ease-out" }}>
+        {/* HEADER */}
+        <header style={{ padding: "2rem 1.5rem", textAlign: "center", borderBottom: "1px solid rgba(6, 182, 212, 0.2)" }}>
+          <h1 style={{
+            fontSize: "2.5rem", fontWeight: "900", marginBottom: "0.25rem",
+            background: "linear-gradient(90deg, #06b6d4, #3b82f6)",
+            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text"
+          }}>
+            SUMON SOURABH GHOSH
+          </h1>
+          <p style={{ fontSize: "1rem", color: "#a855f7", fontWeight: "700" }}>Former - Assistant System Engineer (TCS)</p>
+          <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "1rem", fontSize: "0.85rem", flexWrap: "wrap" }}>
+            <span style={{ color: "#06b6d4" }}>+919563157811</span>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <a href="mailto:sumon38.sourabh@gmail.com" style={{ color: "#06b6d4", textDecoration: "none" }}>sumon38.sourabh@gmail.com</a>
+            <span style={{ color: "#9ca3af" }}>•</span>
+            <a href="https://github.com/sghoshm" target="_blank" rel="noopener noreferrer" style={{ color: "#06b6d4", textDecoration: "none" }}>github.com/sghoshm</a>
+          </div>
+        </header>
+
+        {/* HOME PAGE - INTERACTIVE GAME STYLE */}
+        {currentPage === "home" && (
+          <div style={{ padding: "1.5rem 1rem", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
+            {/* ROLE SWITCHER */}
+            <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginBottom: "2rem", flexWrap: "wrap" }}>
+              {[
+                { id: "qa", label: "🧪 QA Engineer", color: "#06b6d4" },
+                { id: "dev", label: "💻 Software Developer", color: "#3b82f6" },
+                { id: "network", label: "🌐 Network/System Admin", color: "#a855f7" }
+              ].map((role) => (
+                <button
+                  key={role.id}
+                  onClick={() => setSelectedRole(role.id)}
+                  style={{
+                    background: selectedRole === role.id ? `linear-gradient(135deg, ${role.color}, ${role.color}99)` : "transparent",
+                    border: `2px solid ${role.color}`,
+                    color: "#ffffff",
+                    padding: "0.75rem 1.5rem",
+                    borderRadius: "0.75rem",
+                    fontWeight: "700",
+                    cursor: "pointer",
+                    transition: "all 0.3s",
+                    fontSize: "0.9rem"
+                  }}
+                  onMouseEnter={(e) => {
+                    if (selectedRole !== role.id) {
+                      e.currentTarget.style.background = `rgba(${role.color === "#06b6d4" ? "6, 182, 212" : role.color === "#3b82f6" ? "59, 130, 246" : "168, 85, 247"}, 0.2)`;
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (selectedRole !== role.id) {
+                      e.currentTarget.style.background = "transparent";
+                    }
+                  }}
+                >
+                  {role.label}
+                </button>
+              ))}
+            </div>
+
+            <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+              <h2 style={{ fontSize: "2.5rem", fontWeight: "900", color: "#ffffff", marginBottom: "0.5rem", textShadow: "0 0 20px rgba(6, 182, 212, 0.3)" }}>
+                🎮 EXPLORE MY JOURNEY
+              </h2>
+              <p style={{ color: "#d1d5db", fontSize: "0.95rem", maxWidth: "700px", margin: "0 auto" }}>
+                Click on any card to discover more. Unlock my professional story!
+              </p>
+            </div>
+
+            {/* QUICK STATS ROW */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "1rem", marginBottom: "2rem", maxWidth: "1100px", margin: "0 auto 2rem auto", width: "100%" }}>
+              {[
+                { stat: "1.7+", label: "Years Experience" },
+                { stat: "4", label: "Major Projects" },
+                { stat: "18+", label: "Tech Skills" },
+                { stat: "B.E.", label: "Degree Holder" }
+              ].map((item, idx) => (
+                <div key={idx} style={{
+                  background: "rgba(6, 182, 212, 0.1)", border: "1px solid rgba(6, 182, 212, 0.3)",
+                  padding: "1rem", borderRadius: "0.75rem", textAlign: "center"
+                }}>
+                  <p style={{ fontSize: "1.5rem", fontWeight: "900", color: "#06b6d4", marginBottom: "0.25rem" }}>{item.stat}</p>
+                  <p style={{ fontSize: "0.8rem", color: "#9ca3af", fontWeight: "600" }}>{item.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* GAME CARDS GRID - ROLE-SPECIFIC LAYOUT */}
+            <div style={{ maxWidth: "1100px", margin: "0 auto", width: "100%" }}>
+              {/* Cards filtered by selected role */}
+              <div style={{ display: "flex", justifyContent: "center", gap: "0.8rem", marginBottom: "1rem", flexWrap: "wrap" }}>
+                {[
+                  // Common cards for all roles
+                  { id: "experience", icon: Briefcase, title: "Professional Experience", desc: "1.7 years at TCS", color: "#3b82f6", emoji: "💼", roles: ["qa", "dev", "network"] },
+                  { id: "projects", icon: Code, title: "Projects & Case Studies", desc: "4 major projects", color: "#06b6d4", emoji: "🚀", roles: ["qa", "dev", "network"] },
+                  
+                  // QA-specific
+                  { id: "qaArtifacts", icon: Award, title: "QA Artifacts", desc: "Test cases, reports", color: "#ec4899", emoji: "📋", roles: ["qa"] },
+                  
+                  // Developer-specific
+                  
+                  // Network/Admin-specific
+                  { id: "infrastructure", icon: Database, title: "Infrastructure & Networking", desc: "Server, DNS, SSL", color: "#f43f5e", emoji: "🌐", roles: ["network"] },
+                  
+                  // Common
+                  { id: "skills", icon: Zap, title: "Skills by Role", desc: "18+ technologies", color: "#a855f7", emoji: "⚡", roles: ["qa", "dev", "network"] },
+                  { id: "education", icon: BookOpen, title: "Education", desc: "B.E. Electronics", color: "#ec4899", emoji: "📚", roles: ["qa", "dev", "network"] },
+                  { id: "contact", icon: Mail, title: "Contact & Availability", desc: "Get in touch", color: "#f43f5e", emoji: "💌", roles: ["qa", "dev", "network"] }
+                ].filter(card => card.roles.includes(selectedRole)).map((card) => {
+                  const Icon = card.icon;
+                  return (
+                    <div 
+                      key={card.id}
+                      onClick={() => setCurrentPage(card.id)}
+                      style={{
+                        background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                        border: `2px solid ${card.color}33`, borderRadius: "0.9rem",
+                        padding: "1.3rem 1.1rem", transition: "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)", cursor: "pointer",
+                        display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
+                        width: "195px", height: "235px", justifyContent: "space-between",
+                        position: "relative", overflow: "hidden"
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.1) rotateY(5deg)";
+                        e.currentTarget.style.borderColor = card.color;
+                        e.currentTarget.style.background = "rgba(15, 23, 42, 0.95)";
+                        e.currentTarget.style.boxShadow = `0 20px 60px ${card.color}44, inset 0 0 30px ${card.color}22`;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1) rotateY(0)";
+                        e.currentTarget.style.borderColor = card.color + "33";
+                        e.currentTarget.style.background = "rgba(15, 23, 42, 0.7)";
+                        e.currentTarget.style.boxShadow = "none";
+                      }}
+                    >
+                      <div style={{ fontSize: "1.8rem", marginBottom: "0.2rem" }}>{card.emoji}</div>
+                      <div style={{ padding: "0.7rem", background: `linear-gradient(135deg, ${card.color}22, ${card.color}44)`, borderRadius: "0.5rem", marginBottom: "0.6rem", width: "55px", height: "55px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <Icon size={26} color={card.color} />
+                      </div>
+                      <h3 style={{ fontSize: "0.95rem", fontWeight: "900", color: "#ffffff", marginBottom: "0.2rem" }}>{card.title}</h3>
+                      <p style={{ color: "#d1d5db", fontSize: "0.7rem", lineHeight: "1.3" }}>{card.desc}</p>
+                      <div style={{ marginTop: "auto", color: card.color, fontWeight: "700", fontSize: "0.7rem" }}>
+                        ▶ EXPLORE
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* PROFESSIONAL SUMMARY */}
+            <div style={{
+              background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+              border: "1px solid rgba(6, 182, 212, 0.3)", borderRadius: "1rem",
+              padding: "1.5rem", maxWidth: "1100px", margin: "1rem auto", width: "100%"
+            }}>
+              <h3 style={{ fontSize: "1rem", fontWeight: "900", color: "#06b6d4", marginBottom: "0.8rem" }}>📋 PROFESSIONAL SUMMARY</h3>
+              <p style={{ color: "#d1d5db", fontSize: "0.9rem", lineHeight: "1.6", margin: 0 }}>
+                Engineer with 1.7+ years of experience at TCS, trained in Quality Assurance, backend deployment, and IT infrastructure. Hands-on experience in manual testing, Agile processes, server deployment, SSL security, and cloud-based services. Strong understanding of application behavior from development to production, enabling effective testing, debugging, and system reliability.
+              </p>
+            </div>
+
+            {/* DOWNLOAD RESUME BUTTON */}
+            <div style={{ textAlign: "center", margin: "1.5rem auto", maxWidth: "1100px" }}>
+              <a 
+                href="/resume.pdf" 
+                download="Sumon_Sourabh_Ghosh_Resume.pdf"
+                style={{
+                  display: "inline-block",
+                  background: "linear-gradient(135deg, #06b6d4, #3b82f6)",
+                  color: "#ffffff",
+                  padding: "1rem 2.5rem",
+                  borderRadius: "0.8rem",
+                  textDecoration: "none",
+                  fontWeight: "900",
+                  fontSize: "1rem",
+                  transition: "all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                  boxShadow: "0 10px 30px rgba(6, 182, 212, 0.3)",
+                  cursor: "pointer"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.08) translateY(-2px)";
+                  e.currentTarget.style.boxShadow = "0 20px 50px rgba(6, 182, 212, 0.5)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1) translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 10px 30px rgba(6, 182, 212, 0.3)";
+                }}
+              >
+                ⬇️ DOWNLOAD RESUME
+              </a>
+            </div>
+          </div>
+        )}
+
+        {/* EXPERIENCE PAGE */}
+        {currentPage === "experience" && (
+          <div style={{ padding: "3rem 1.5rem" }}>
+            <button 
+              onClick={() => setCurrentPage("home")}
+              style={{
+                display: "flex", alignItems: "center", gap: "0.5rem",
+                background: "transparent", border: "1px solid rgba(6, 182, 212, 0.5)", color: "#06b6d4",
+                padding: "0.75rem 1.5rem", borderRadius: "0.5rem", cursor: "pointer", marginBottom: "2rem",
+                transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(6, 182, 212, 0.1)";
+                e.currentTarget.style.borderColor = "#06b6d4";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.borderColor = "rgba(6, 182, 212, 0.5)";
+              }}
+            >
+              <ArrowLeft size={18} /> Back to Home
+            </button>
+
+            <h2 style={{ fontSize: "2.5rem", fontWeight: "900", color: "#3b82f6", marginBottom: "2rem" }}>Professional Experience</h2>
+
+            <div style={{ background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)", border: "1px solid rgba(59, 130, 246, 0.3)", borderRadius: "1rem", padding: "2rem" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "1rem" }}>
+                <h3 style={{ fontSize: "1.75rem", fontWeight: "900", color: "#ffffff" }}>Assistant System Engineer</h3>
+                <span style={{ color: "#3b82f6", fontWeight: "700" }}>06/2022 - 02/2024</span>
+              </div>
+              <p style={{ fontSize: "1.25rem", color: "#a855f7", fontWeight: "700", marginBottom: "0.5rem" }}>Tata Consultancy Services (TCS)</p>
+              <p style={{ color: "#9ca3af", marginBottom: "1.5rem" }}>Kolkata, India</p>
+
+              <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
+                <h4 style={{ color: "#06b6d4", fontWeight: "700", marginBottom: "1rem" }}>Key Responsibilities:</h4>
+                <ul style={{ listStyle: "none", padding: 0, color: "#d1d5db", lineHeight: "2" }}>
+                  <li>✓ 1 Year and 7 Months of Experience at TATA CONSULTANCY SERVICES</li>
+                  <li>✓ Experience as a Group Leader of Trainee Assistant System Engineers</li>
+                  <li>✓ Trained on working in Agile Environment</li>
+                  <li>✓ Trained on IT Security (Deploying Backend & obtaining SSL certificates)</li>
+                  <li>✓ Experience on React Native & Flutter for Frontend Development</li>
+                  <li>✓ Experience in Firebase, NodeJS & AWS for Backend Development</li>
+                  <li>✓ Trained on Quality Assurance</li>
+                  <li>✓ Trained on Mainframe Technologies</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* PROJECTS PAGE */}
+        {currentPage === "projects" && (
+          <div style={{ padding: "3rem 1.5rem" }}>
+            <button 
+              onClick={() => setCurrentPage("home")}
+              style={{
+                display: "flex", alignItems: "center", gap: "0.5rem",
+                background: "transparent", border: "1px solid rgba(6, 182, 212, 0.5)", color: "#06b6d4",
+                padding: "0.75rem 1.5rem", borderRadius: "0.5rem", cursor: "pointer", marginBottom: "2rem",
+                transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(6, 182, 212, 0.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+              }}
+            >
+              <ArrowLeft size={18} /> Back to Home
+            </button>
+
+            <h2 style={{ fontSize: "2.5rem", fontWeight: "900", color: "#06b6d4", marginBottom: "2rem" }}>Software Engineering Projects & Case Studies</h2>
+
+            <div style={{ display: "grid", gap: "2rem" }}>
+              {[
+                { 
+                  title: "Self-Hosted Video Streaming Platform", 
+                  period: "2020-2024", 
+                  desc: "Built a self-hosted streaming server deployed on home desktop with full backend, frontend, and security implementation.",
+                  caseStudy: [
+                    { role: "🧪 QA Testing Angle", content: "Tested authentication & access control, load testing for multiple concurrent users, negative testing (invalid formats, broken streams), security testing (SSL, unauthorized access), performance testing, and regression cycles." },
+                    { role: "💻 Development Angle", content: "Designed and built React frontend, Node.js backend API, integrated Firebase auth, deployed with Docker, implemented CI/CD workflows." },
+                    { role: "🌐 Infrastructure Angle", content: "Home server deployment & maintenance, DNS management via Cloudflare, SSL certificate provisioning, firewall & access control, port forwarding & tunneling, service uptime monitoring." }
+                  ],
+                  learnings: ["Server Deployment", "SSL Certificates", "Cloudflare DNS Tunneling", "Backend/Frontend", "Security Hardening", "Performance Testing"] 
+                },
+                { 
+                  title: "Voice-Controlled AI Assistant", 
+                  period: "2023-2024", 
+                  desc: "Generative AI application using OpenAI's GPT-3.5 for real-time voice interactions and system command execution.",
+                  caseStudy: [
+                    { role: "🧪 QA Testing Angle", content: "Tested voice recognition accuracy, API response times, error handling, invalid voice commands, response validation against expected outputs, concurrency testing." },
+                    { role: "💻 Development Angle", content: "Integrated OpenAI API, implemented Vosk speech recognition, built Pyttsx3 text-to-speech, system command execution, Python backend, PyInstaller packaging." },
+                    { role: "🌐 Infrastructure Angle", content: "Local environment setup, system resource monitoring, cross-platform compatibility testing." }
+                  ],
+                  learnings: ["API Management", "Vosk & Pyttsx3", "System Commands", "PyInstaller", "AI Integration"] 
+                },
+                { 
+                  title: "Hardware Projects (IoT)", 
+                  period: "2020-2024", 
+                  desc: "Arduino-based projects: Fire Alarm System, Heartbeat Monitor, Smart Chair for auditoriums with sensor integration and real-time monitoring.",
+                  caseStudy: [
+                    { role: "🧪 QA Testing Angle", content: "Sensor accuracy testing, response time validation, edge case testing (extreme temperatures, low battery), field testing under real conditions." },
+                    { role: "💻 Development Angle", content: "Arduino firmware development, sensor libraries integration, data processing algorithms, real-time data collection." },
+                    { role: "🌐 Infrastructure Angle", content: "Device communication protocols, local network integration, data logging and storage." }
+                  ],
+                  learnings: ["Arduino", "Sensor Integration", "IoT Protocols", "Hardware Testing"] 
+                },
+                { 
+                  title: "Mobile Applications", 
+                  period: "2021-2023", 
+                  desc: "Android native apps: Photo Slideshow, TicTacToe Game, Flappy Bird Game with UI/UX optimization.",
+                  caseStudy: [
+                    { role: "🧪 QA Testing Angle", content: "UI responsiveness testing, game mechanics validation, edge case handling, device compatibility testing across Android versions." },
+                    { role: "💻 Development Angle", content: "Android Studio development, Java implementation, game logic, UI animations, lifecycle management." },
+                    { role: "🌐 Infrastructure Angle", content: "App deployment, APK optimization, device testing setup." }
+                  ],
+                  learnings: ["Android Studio", "Java", "Game Development", "UI/UX"] 
+                }
+              ].map((proj, idx) => (
+                <div key={idx} style={{
+                  background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                  border: "1px solid rgba(6, 182, 212, 0.3)", borderRadius: "1rem",
+                  padding: "2rem", transition: "all 0.3s", cursor: "pointer"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateX(10px)";
+                  e.currentTarget.style.borderColor = "#06b6d4";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateX(0)";
+                  e.currentTarget.style.borderColor = "rgba(6, 182, 212, 0.3)";
+                }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "1rem" }}>
+                    <h3 style={{ fontSize: "1.5rem", fontWeight: "900", color: "#ffffff" }}>{proj.title}</h3>
+                    <span style={{ color: "#06b6d4", fontWeight: "700" }}>{proj.period}</span>
+                  </div>
+                  <p style={{ color: "#d1d5db", marginBottom: "1.5rem" }}>{proj.desc}</p>
+                  
+                  {/* Case Study by Role */}
+                  <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", marginBottom: "1.5rem", borderLeft: "4px solid #a855f7" }}>
+                    <h4 style={{ color: "#a855f7", fontWeight: "700", marginBottom: "1rem" }}>📌 Multi-Role Case Study:</h4>
+                    {proj.caseStudy.map((study, i) => (
+                      <div key={i} style={{ marginBottom: i < proj.caseStudy.length - 1 ? "1rem" : 0 }}>
+                        <p style={{ color: "#06b6d4", fontSize: "0.9rem", fontWeight: "700", marginBottom: "0.5rem" }}>{study.role}</p>
+                        <p style={{ color: "#d1d5db", fontSize: "0.85rem", margin: 0 }}>{study.content}</p>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+                    {proj.learnings.map((learn, i) => (
+                      <span key={i} style={{
+                        background: "rgba(6, 182, 212, 0.2)", color: "#06b6d4",
+                        padding: "0.4rem 1rem", borderRadius: "9999px", fontSize: "0.85rem"
+                      }}>
+                        {learn}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* SKILLS PAGE */}
+        {currentPage === "skills" && (
+          <div style={{ padding: "3rem 1.5rem" }}>
+            <button 
+              onClick={() => setCurrentPage("home")}
+              style={{
+                display: "flex", alignItems: "center", gap: "0.5rem",
+                background: "transparent", border: "1px solid rgba(6, 182, 212, 0.5)", color: "#06b6d4",
+                padding: "0.75rem 1.5rem", borderRadius: "0.5rem", cursor: "pointer", marginBottom: "2rem",
+                transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(6, 182, 212, 0.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+              }}
+            >
+              <ArrowLeft size={18} /> Back to Home
+            </button>
+
+            <h2 style={{ fontSize: "2.5rem", fontWeight: "900", color: "#a855f7", marginBottom: "2rem" }}>Technical Skills by Role</h2>
+
+            {/* ROLE TABS */}
+            <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginBottom: "2rem", flexWrap: "wrap" }}>
+              {[
+                { id: "qa", label: "🧪 QA Engineer", color: "#06b6d4" },
+                { id: "dev", label: "💻 Developer", color: "#3b82f6" },
+                { id: "network", label: "🌐 Network/Admin", color: "#a855f7" }
+              ].map((role) => (
+                <button
+                  key={role.id}
+                  onClick={() => setSelectedRole(role.id)}
+                  style={{
+                    background: selectedRole === role.id ? `linear-gradient(135deg, ${role.color}, ${role.color}99)` : "transparent",
+                    border: `2px solid ${role.color}`,
+                    color: "#ffffff",
+                    padding: "0.75rem 1.5rem",
+                    borderRadius: "0.75rem",
+                    fontWeight: "700",
+                    cursor: "pointer",
+                    transition: "all 0.3s",
+                    fontSize: "0.95rem"
+                  }}
+                  onMouseEnter={(e) => {
+                    if (selectedRole !== role.id) {
+                      e.currentTarget.style.background = `rgba(${role.color === "#06b6d4" ? "6, 182, 212" : role.color === "#3b82f6" ? "59, 130, 246" : "168, 85, 247"}, 0.2)`;
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (selectedRole !== role.id) {
+                      e.currentTarget.style.background = "transparent";
+                    }
+                  }}
+                >
+                  {role.label}
+                </button>
+              ))}
+            </div>
+
+            {/* QA ENGINEER SKILLS */}
+            {selectedRole === "qa" && (
+              <div>
+                <h3 style={{ fontSize: "1.5rem", fontWeight: "900", color: "#06b6d4", marginBottom: "1.5rem" }}>🧪 QA Engineer Skills</h3>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
+                  {[
+                    "Manual Testing", "Test Case Design", "Bug Reporting", "Agile Methodology",
+                    "Test Planning", "Regression Testing", "Sanity Testing", "Load Testing",
+                    "Security Testing", "API Testing", "Test Documentation", "Jira & Tools",
+                    "Quality Assurance", "Test Execution", "Defect Analysis", "Requirements Analysis"
+                  ].map((skill, idx) => (
+                    <div key={idx} style={{
+                      background: "rgba(6, 182, 212, 0.15)", border: "1px solid rgba(6, 182, 212, 0.3)",
+                      padding: "1.5rem", borderRadius: "0.75rem", textAlign: "center", cursor: "pointer",
+                      transition: "all 0.3s"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.05)";
+                      e.currentTarget.style.background = "rgba(6, 182, 212, 0.3)";
+                      e.currentTarget.style.borderColor = "#06b6d4";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.background = "rgba(6, 182, 212, 0.15)";
+                      e.currentTarget.style.borderColor = "rgba(6, 182, 212, 0.3)";
+                    }}>
+                      <p style={{ color: "#06b6d4", fontWeight: "700", fontSize: "1.05rem" }}>{skill}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* DEVELOPER SKILLS */}
+            {selectedRole === "dev" && (
+              <div>
+                <h3 style={{ fontSize: "1.5rem", fontWeight: "900", color: "#3b82f6", marginBottom: "1.5rem" }}>💻 Developer Skills</h3>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
+                  {[
+                    "React & React Native", "Node.js Backend", "Firebase Integration", "AWS Development",
+                    "Python Programming", "Java (Android)", "Flutter Development", "Docker Containers",
+                    "API Development", "Database Design", "CI/CD Workflows", "Git Version Control",
+                    "REST APIs", "Generative AI", "Game Development", "Backend Deployment"
+                  ].map((skill, idx) => (
+                    <div key={idx} style={{
+                      background: "rgba(59, 130, 246, 0.15)", border: "1px solid rgba(59, 130, 246, 0.3)",
+                      padding: "1.5rem", borderRadius: "0.75rem", textAlign: "center", cursor: "pointer",
+                      transition: "all 0.3s"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.05)";
+                      e.currentTarget.style.background = "rgba(59, 130, 246, 0.3)";
+                      e.currentTarget.style.borderColor = "#3b82f6";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.background = "rgba(59, 130, 246, 0.15)";
+                      e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.3)";
+                    }}>
+                      <p style={{ color: "#3b82f6", fontWeight: "700", fontSize: "1.05rem" }}>{skill}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* NETWORK/ADMIN SKILLS */}
+            {selectedRole === "network" && (
+              <div>
+                <h3 style={{ fontSize: "1.5rem", fontWeight: "900", color: "#a855f7", marginBottom: "1.5rem" }}>🌐 Network / System Admin Skills</h3>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
+                  {[
+                    "Server Deployment", "SSL Certificates", "DNS Management", "Cloudflare Configuration",
+                    "Port Forwarding", "Firewall & Access Control", "Network Tunneling", "Service Monitoring",
+                    "Backup Strategies", "System Hardening", "Uptime Monitoring", "AWS Basics",
+                    "Docker Deployment", "SSH & Security", "Performance Testing", "System Administration"
+                  ].map((skill, idx) => (
+                    <div key={idx} style={{
+                      background: "rgba(168, 85, 247, 0.15)", border: "1px solid rgba(168, 85, 247, 0.3)",
+                      padding: "1.5rem", borderRadius: "0.75rem", textAlign: "center", cursor: "pointer",
+                      transition: "all 0.3s"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.05)";
+                      e.currentTarget.style.background = "rgba(168, 85, 247, 0.3)";
+                      e.currentTarget.style.borderColor = "#a855f7";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.background = "rgba(168, 85, 247, 0.15)";
+                      e.currentTarget.style.borderColor = "rgba(168, 85, 247, 0.3)";
+                    }}>
+                      <p style={{ color: "#a855f7", fontWeight: "700", fontSize: "1.05rem" }}>{skill}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* QA ARTIFACTS PAGE */}
+        {currentPage === "qaArtifacts" && (
+          <div style={{ padding: "3rem 1.5rem" }}>
+            <button 
+              onClick={() => setCurrentPage("home")}
+              style={{
+                display: "flex", alignItems: "center", gap: "0.5rem",
+                background: "transparent", border: "1px solid rgba(6, 182, 212, 0.5)", color: "#06b6d4",
+                padding: "0.75rem 1.5rem", borderRadius: "0.5rem", cursor: "pointer", marginBottom: "2rem",
+                transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(6, 182, 212, 0.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+              }}
+            >
+              <ArrowLeft size={18} /> Back to Home
+            </button>
+
+            <h2 style={{ fontSize: "2.5rem", fontWeight: "900", color: "#ec4899", marginBottom: "2rem" }}>🧪 QA Artifacts & Testing Portfolio</h2>
+
+            {/* QA METRICS */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1.5rem", marginBottom: "3rem", maxWidth: "1100px", margin: "0 auto 3rem auto" }}>
+              {[
+                { metric: "250+", label: "Test Cases Written" },
+                { metric: "90+", label: "Bugs Reported" },
+                { metric: "12", label: "Regression Cycles" },
+                { metric: "8", label: "Agile Sprints" }
+              ].map((item, idx) => (
+                <div key={idx} style={{
+                  background: "rgba(236, 72, 153, 0.15)", border: "1px solid rgba(236, 72, 153, 0.3)",
+                  padding: "1.5rem", borderRadius: "0.75rem", textAlign: "center", cursor: "pointer",
+                  transition: "all 0.3s"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.05)";
+                  e.currentTarget.style.background = "rgba(236, 72, 153, 0.3)";
+                  e.currentTarget.style.borderColor = "#ec4899";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.background = "rgba(236, 72, 153, 0.15)";
+                  e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
+                }}>
+                  <p style={{ fontSize: "1.8rem", fontWeight: "900", color: "#ec4899", marginBottom: "0.5rem" }}>{item.metric}</p>
+                  <p style={{ color: "#d1d5db", fontWeight: "600", fontSize: "0.9rem" }}>{item.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ display: "grid", gap: "2rem" }}>
+              {/* SAMPLE TEST CASES */}
+              <div style={{
+                background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                border: "1px solid rgba(236, 72, 153, 0.3)", borderRadius: "1rem",
+                padding: "2rem", transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.borderColor = "#ec4899";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
+              }}>
+                <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#ec4899", marginBottom: "1.5rem" }}>📄 Sample Test Cases</h3>
+                <div style={{ display: "grid", gap: "1rem" }}>
+                  {[
+                    { tc: "TC-001", title: "User Login - Valid Credentials", steps: "1. Enter valid email 2. Enter valid password 3. Click Login", expected: "User redirected to dashboard", type: "Functional" },
+                    { tc: "TC-002", title: "User Registration - Duplicate Email", steps: "1. Fill registration form 2. Use existing email 3. Click Register", expected: "Error: Email already registered", type: "Negative" },
+                    { tc: "TC-003", title: "Video Stream Load Test - 50 Concurrent Users", steps: "1. Simulate 50 users 2. Start streaming video 3. Monitor response time", expected: "Stream loads within 3 seconds", type: "Performance" }
+                  ].map((testCase, i) => (
+                    <div key={i} style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "0.75rem" }}>
+                        <h4 style={{ color: "#06b6d4", fontWeight: "700", fontSize: "0.95rem", margin: 0 }}>{testCase.tc}: {testCase.title}</h4>
+                        <span style={{ background: "rgba(236, 72, 153, 0.2)", color: "#ec4899", padding: "0.25rem 0.75rem", borderRadius: "9999px", fontSize: "0.75rem", fontWeight: "700" }}>{testCase.type}</span>
+                      </div>
+                      <p style={{ color: "#9ca3af", fontSize: "0.85rem", margin: "0.5rem 0" }}><strong>Steps:</strong> {testCase.steps}</p>
+                      <p style={{ color: "#9ca3af", fontSize: "0.85rem", margin: 0 }}><strong>Expected:</strong> {testCase.expected}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* BUG REPORTS */}
+              <div style={{
+                background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                border: "1px solid rgba(236, 72, 153, 0.3)", borderRadius: "1rem",
+                padding: "2rem", transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.borderColor = "#ec4899";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
+              }}>
+                <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#ec4899", marginBottom: "1.5rem" }}>🐞 Sample Bug Report</h3>
+                <div style={{ display: "grid", gap: "1rem" }}>
+                  <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", borderLeft: "4px solid #f43f5e" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
+                      <div>
+                        <p style={{ color: "#a855f7", fontSize: "0.85rem", fontWeight: "700", margin: "0 0 0.25rem 0" }}>Bug ID</p>
+                        <p style={{ color: "#ffffff", fontSize: "0.95rem", fontWeight: "700", margin: 0 }}>BUG-042</p>
+                      </div>
+                      <div>
+                        <p style={{ color: "#a855f7", fontSize: "0.85rem", fontWeight: "700", margin: "0 0 0.25rem 0" }}>Severity</p>
+                        <p style={{ color: "#f43f5e", fontSize: "0.95rem", fontWeight: "900", margin: 0 }}>🔴 CRITICAL</p>
+                      </div>
+                      <div>
+                        <p style={{ color: "#a855f7", fontSize: "0.85rem", fontWeight: "700", margin: "0 0 0.25rem 0" }}>Module</p>
+                        <p style={{ color: "#ffffff", fontSize: "0.95rem", fontWeight: "700", margin: 0 }}>User Authentication</p>
+                      </div>
+                      <div>
+                        <p style={{ color: "#a855f7", fontSize: "0.85rem", fontWeight: "700", margin: "0 0 0.25rem 0" }}>Status</p>
+                        <p style={{ color: "#06b6d4", fontSize: "0.95rem", fontWeight: "700", margin: 0 }}>Fixed</p>
+                      </div>
+                    </div>
+                    <p style={{ color: "#d1d5db", fontSize: "0.9rem", margin: "0 0 0.75rem 0" }}><strong>Title:</strong> SSL Certificate Validation Bypass in Login Module</p>
+                    <p style={{ color: "#d1d5db", fontSize: "0.9rem", margin: "0 0 0.75rem 0" }}><strong>Steps:</strong> 1. Access login page over HTTP 2. Enter credentials 3. Submit form</p>
+                    <p style={{ color: "#d1d5db", fontSize: "0.9rem", margin: "0 0 0.75rem 0" }}><strong>Expected:</strong> Page redirects to HTTPS, SSL validation enforced</p>
+                    <p style={{ color: "#d1d5db", fontSize: "0.9rem", margin: 0 }}><strong>Actual:</strong> Page allows HTTP access without SSL validation, security risk</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* TEST PLAN */}
+              <div style={{
+                background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                border: "1px solid rgba(236, 72, 153, 0.3)", borderRadius: "1rem",
+                padding: "2rem", transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.borderColor = "#ec4899";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
+              }}>
+                <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#ec4899", marginBottom: "1.5rem" }}>📋 Test Plan Overview</h3>
+                <div style={{ display: "grid", gap: "1rem" }}>
+                  {[
+                    { section: "Scope", content: "Testing of Video Streaming Application (Frontend + Backend + Infrastructure)" },
+                    { section: "Testing Types", content: "Functional, Security, Performance, Load, Usability, Regression, Negative Testing" },
+                    { section: "Risk Assessment", content: "High: Authentication bypass, Data leak | Medium: Performance degradation | Low: UI issues" },
+                    { section: "Test Environment", content: "Dev, Staging, Production (post-deployment) | Browser: Chrome, Firefox, Safari | Device: Desktop, Mobile" },
+                    { section: "Entry Criteria", content: "Requirements finalized, Build deployed, Test cases reviewed, Test data prepared" },
+                    { section: "Exit Criteria", content: "All critical bugs fixed, 95% test coverage, Sign-off from stakeholders" }
+                  ].map((item, i) => (
+                    <div key={i} style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
+                      <p style={{ color: "#06b6d4", fontWeight: "700", fontSize: "0.9rem", margin: "0 0 0.5rem 0" }}>{item.section}</p>
+                      <p style={{ color: "#d1d5db", fontSize: "0.9rem", margin: 0 }}>{item.content}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* EDUCATION PAGE */}
+        {currentPage === "education" && (
+          <div style={{ padding: "3rem 1.5rem" }}>
+            <button 
+              onClick={() => setCurrentPage("home")}
+              style={{
+                display: "flex", alignItems: "center", gap: "0.5rem",
+                background: "transparent", border: "1px solid rgba(6, 182, 212, 0.5)", color: "#06b6d4",
+                padding: "0.75rem 1.5rem", borderRadius: "0.5rem", cursor: "pointer", marginBottom: "2rem",
+                transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(6, 182, 212, 0.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+              }}
+            >
+              <ArrowLeft size={18} /> Back to Home
+            </button>
+
+            <h2 style={{ fontSize: "2.5rem", fontWeight: "900", color: "#ec4899", marginBottom: "2rem" }}>Education</h2>
+
+            <div style={{ display: "grid", gap: "1.5rem" }}>
+              {[
+                { degree: "B.E/B.Tech in Electronics & Communication", school: "Sathyabama Institute of Science and Technology", period: "08/2018 - 09/2022" },
+                { degree: "XII - Higher Secondary (Science + Maths)", school: "Kendriya Vidyalaya Birbhum", period: "2017 - 2018" },
+                { degree: "X - Secondary Board Examination (CBSE)", school: "Kendriya Vidyalaya Birbhum", period: "2016" }
+              ].map((edu, idx) => (
+                <div key={idx} style={{
+                  background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                  border: "1px solid rgba(236, 72, 153, 0.3)", borderRadius: "1rem",
+                  padding: "2rem", transition: "all 0.3s"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.borderColor = "#ec4899";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
+                }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "0.75rem" }}>
+                    <h3 style={{ fontSize: "1.25rem", fontWeight: "900", color: "#ffffff" }}>{edu.degree}</h3>
+                    <span style={{ color: "#ec4899", fontWeight: "700" }}>{edu.period}</span>
+                  </div>
+                  <p style={{ color: "#a855f7", fontWeight: "700" }}>{edu.school}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* INFRASTRUCTURE & NETWORKING PAGE */}
+        {currentPage === "infrastructure" && (
+          <div style={{ padding: "3rem 1.5rem" }}>
+            <button 
+              onClick={() => setCurrentPage("home")}
+              style={{
+                display: "flex", alignItems: "center", gap: "0.5rem",
+                background: "transparent", border: "1px solid rgba(6, 182, 212, 0.5)", color: "#06b6d4",
+                padding: "0.75rem 1.5rem", borderRadius: "0.5rem", cursor: "pointer", marginBottom: "2rem",
+                transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(6, 182, 212, 0.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+              }}
+            >
+              <ArrowLeft size={18} /> Back to Home
+            </button>
+
+            <h2 style={{ fontSize: "2.5rem", fontWeight: "900", color: "#f43f5e", marginBottom: "2rem" }}>🌐 Infrastructure & Networking</h2>
+
+            <div style={{ display: "grid", gap: "2rem" }}>
+              {/* CORE INFRASTRUCTURE SECTION */}
+              <div style={{
+                background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                border: "1px solid rgba(244, 63, 94, 0.3)", borderRadius: "1rem",
+                padding: "2rem", transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.borderColor = "#f43f5e";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+              }}>
+                <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#f43f5e", marginBottom: "1.5rem" }}>🖥️ Home Server Deployment & Maintenance</h3>
+                <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
+                  <ul style={{ listStyle: "none", padding: 0, color: "#d1d5db", lineHeight: "2" }}>
+                    <li>✓ Desktop server setup and configuration for production use</li>
+                    <li>✓ Continuous uptime monitoring and maintenance scheduling</li>
+                    <li>✓ Resource allocation and performance optimization</li>
+                    <li>✓ Backup and disaster recovery strategies</li>
+                    <li>✓ Hardware troubleshooting and maintenance</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* DNS & CLOUDFLARE */}
+              <div style={{
+                background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                border: "1px solid rgba(244, 63, 94, 0.3)", borderRadius: "1rem",
+                padding: "2rem", transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.borderColor = "#f43f5e";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+              }}>
+                <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#f43f5e", marginBottom: "1.5rem" }}>☁️ DNS Management (Cloudflare)</h3>
+                <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
+                  <ul style={{ listStyle: "none", padding: 0, color: "#d1d5db", lineHeight: "2" }}>
+                    <li>✓ Domain DNS configuration and propagation</li>
+                    <li>✓ Cloudflare tunnel setup for secure remote access</li>
+                    <li>✓ CDN configuration for content delivery optimization</li>
+                    <li>✓ DNS records management (A, CNAME, MX records)</li>
+                    <li>✓ DDoS protection and firewall rules configuration</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* SSL CERTIFICATES */}
+              <div style={{
+                background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                border: "1px solid rgba(244, 63, 94, 0.3)", borderRadius: "1rem",
+                padding: "2rem", transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.borderColor = "#f43f5e";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+              }}>
+                <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#f43f5e", marginBottom: "1.5rem" }}>🔒 SSL Certificate Provisioning</h3>
+                <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
+                  <ul style={{ listStyle: "none", padding: 0, color: "#d1d5db", lineHeight: "2" }}>
+                    <li>✓ SSL certificate generation and installation</li>
+                    <li>✓ Let's Encrypt ACME setup for automatic renewal</li>
+                    <li>✓ Certificate management and expiration monitoring</li>
+                    <li>✓ HTTPS enforcement and mixed content resolution</li>
+                    <li>✓ SSL pinning and certificate validation</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* SECURITY & ACCESS CONTROL */}
+              <div style={{
+                background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                border: "1px solid rgba(244, 63, 94, 0.3)", borderRadius: "1rem",
+                padding: "2rem", transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.borderColor = "#f43f5e";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+              }}>
+                <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#f43f5e", marginBottom: "1.5rem" }}>🔐 Firewall & Access Control</h3>
+                <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
+                  <ul style={{ listStyle: "none", padding: 0, color: "#d1d5db", lineHeight: "2" }}>
+                    <li>✓ Firewall rules configuration and port management</li>
+                    <li>✓ SSH hardening and key-based authentication</li>
+                    <li>✓ Access control list (ACL) management</li>
+                    <li>✓ Rate limiting and brute-force protection</li>
+                    <li>✓ Security audit and vulnerability assessment</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* CASE STUDY: MEDIA SERVER */}
+              <div style={{
+                background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                border: "1px solid rgba(244, 63, 94, 0.3)", borderRadius: "1rem",
+                padding: "2rem", transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.borderColor = "#f43f5e";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+              }}>
+                <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#f43f5e", marginBottom: "1.5rem" }}>📹 Case Study: Home Media Server Architecture</h3>
+                <div style={{ display: "grid", gap: "1rem" }}>
+                  {[
+                    { aspect: "🌐 Network Configuration", detail: "Configured home network with static IP, port forwarding, and VPN access for secure remote connections." },
+                    { aspect: "🔀 Port Forwarding & Tunneling", detail: "Set up port forwarding for application access, implemented Cloudflare tunnels for encrypted traffic without exposing IP." },
+                    { aspect: "🛡️ Security Hardening", detail: "Implemented firewall rules, SSL/TLS encryption, SSH hardening, rate limiting, and DDoS protection." },
+                    { aspect: "📊 Performance Testing", detail: "Load tested with concurrent users, monitored CPU/RAM/bandwidth, optimized video encoding and streaming quality." },
+                    { aspect: "💾 Backup Strategy", detail: "Automated daily backups, redundant storage, disaster recovery plan, versioning system." },
+                    { aspect: "📈 Monitoring & Maintenance", detail: "24/7 uptime monitoring, automated alerts, log analysis, regular security patches and updates." }
+                  ].map((study, i) => (
+                    <div key={i} style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
+                      <p style={{ color: "#06b6d4", fontWeight: "700", fontSize: "0.95rem", margin: "0 0 0.5rem 0" }}>{study.aspect}</p>
+                      <p style={{ color: "#d1d5db", fontSize: "0.9rem", margin: 0 }}>{study.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* INFRASTRUCTURE METRICS */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1.5rem", marginTop: "2rem" }}>
+                {[
+                  { metric: "99.9%", label: "Server Uptime" },
+                  { metric: "<50ms", label: "Average Latency" },
+                  { metric: "256GB", label: "Storage Managed" },
+                  { metric: "50+", label: "Security Rules" }
+                ].map((item, idx) => (
+                  <div key={idx} style={{
+                    background: "rgba(244, 63, 94, 0.15)", border: "1px solid rgba(244, 63, 94, 0.3)",
+                    padding: "1.5rem", borderRadius: "0.75rem", textAlign: "center", cursor: "pointer",
+                    transition: "all 0.3s"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                    e.currentTarget.style.background = "rgba(244, 63, 94, 0.3)";
+                    e.currentTarget.style.borderColor = "#f43f5e";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.background = "rgba(244, 63, 94, 0.15)";
+                    e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+                  }}>
+                    <p style={{ fontSize: "1.8rem", fontWeight: "900", color: "#f43f5e", marginBottom: "0.5rem" }}>{item.metric}</p>
+                    <p style={{ color: "#d1d5db", fontWeight: "600", fontSize: "0.9rem" }}>{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* CONTACT PAGE */}
+        {currentPage === "contact" && (
+          <div style={{ padding: "3rem 1.5rem" }}>
+            <button 
+              onClick={() => setCurrentPage("home")}
+              style={{
+                display: "flex", alignItems: "center", gap: "0.5rem",
+                background: "transparent", border: "1px solid rgba(6, 182, 212, 0.5)", color: "#06b6d4",
+                padding: "0.75rem 1.5rem", borderRadius: "0.5rem", cursor: "pointer", marginBottom: "2rem",
+                transition: "all 0.3s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(6, 182, 212, 0.1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+              }}
+            >
+              <ArrowLeft size={18} /> Back to Home
+            </button>
+
+            <h2 style={{ fontSize: "2.5rem", fontWeight: "900", color: "#f43f5e", marginBottom: "3rem", textAlign: "center" }}>Get In Touch</h2>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "2rem", maxWidth: "900px", margin: "0 auto" }}>
+              {[
+                { icon: Phone, label: "Phone", value: "+919563157811", href: "tel:+919563157811", color: "#06b6d4" },
+                { icon: Mail, label: "Email", value: "sumon38.sourabh@gmail.com", href: "mailto:sumon38.sourabh@gmail.com", color: "#3b82f6" },
+                { icon: Github, label: "GitHub", value: "github.com/sghoshm", href: "https://github.com/sghoshm", color: "#a855f7" },
+                { icon: MapPin, label: "Location", value: "Suri, Birbhum, India", href: null, color: "#ec4899" },
+                { icon: Heart, label: "Passion", value: "Bike Riding", href: null, color: "#f43f5e" }
+              ].map((contact, idx) => {
+                const Icon = contact.icon;
+                if (contact.href) {
+                  return (
+                    <a key={idx} href={contact.href} target={contact.href.startsWith("http") ? "_blank" : "_self"} rel="noopener noreferrer" style={{
+                      background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                      border: `1px solid ${contact.color}33`, borderRadius: "1rem",
+                      padding: "2rem", textDecoration: "none", color: "inherit",
+                      display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
+                      transition: "all 0.3s", cursor: "pointer"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.05)";
+                      e.currentTarget.style.borderColor = contact.color;
+                      e.currentTarget.style.background = "rgba(15, 23, 42, 0.9)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.borderColor = contact.color + "33";
+                      e.currentTarget.style.background = "rgba(15, 23, 42, 0.7)";
+                    }}>
+                      <div style={{ padding: "1.5rem", background: `linear-gradient(135deg, ${contact.color}22, ${contact.color}44)`, borderRadius: "1rem", marginBottom: "1rem" }}>
+                        <Icon size={40} color={contact.color} />
+                      </div>
+                      <p style={{ fontSize: "0.9rem", color: "#9ca3af", fontWeight: "700", textTransform: "uppercase", marginBottom: "0.5rem" }}>{contact.label}</p>
+                      <p style={{ color: "#ffffff", fontWeight: "700", fontSize: "1.1rem" }}>{contact.value}</p>
+                    </a>
+                  );
+                } else {
+                  return (
+                    <div key={idx} style={{
+                      background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
+                      border: `1px solid ${contact.color}33`, borderRadius: "1rem",
+                      padding: "2rem", textDecoration: "none", color: "inherit",
+                      display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
+                      transition: "all 0.3s"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.05)";
+                      e.currentTarget.style.borderColor = contact.color;
+                      e.currentTarget.style.background = "rgba(15, 23, 42, 0.9)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.borderColor = contact.color + "33";
+                      e.currentTarget.style.background = "rgba(15, 23, 42, 0.7)";
+                    }}>
+                      <div style={{ padding: "1.5rem", background: `linear-gradient(135deg, ${contact.color}22, ${contact.color}44)`, borderRadius: "1rem", marginBottom: "1rem" }}>
+                        <Icon size={40} color={contact.color} />
+                      </div>
+                      <p style={{ fontSize: "0.9rem", color: "#9ca3af", fontWeight: "700", textTransform: "uppercase", marginBottom: "0.5rem" }}>{contact.label}</p>
+                      <p style={{ color: "#ffffff", fontWeight: "700", fontSize: "1.1rem" }}>{contact.value}</p>
+                    </div>
+                  );
+                }
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* FOOTER */}
+        <footer style={{ textAlign: "center", padding: "2rem 1.5rem", borderTop: "1px solid rgba(6, 182, 212, 0.2)", marginTop: "3rem" }}>
+          <p style={{ fontSize: "0.875rem", color: "#6b7280" }}>© {new Date().getFullYear()} Sumon Sourabh Ghosh • Interactive Portfolio</p>
+        </footer>
+      </div>
+    </div>
+  );
+}
