@@ -61,7 +61,7 @@ export default function Portfolio() {
           </h1>
           <p style={{ fontSize: "1rem", color: "#a855f7", fontWeight: "700" }}>Former - Assistant System Engineer (TCS)</p>
           <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "1rem", fontSize: "0.85rem", flexWrap: "wrap" }}>
-            <span style={{ color: "#06b6d4" }}>+919563157811</span>
+            <a href="tel:+919563157811" style={{ color: "#06b6d4", textDecoration: "none" }}>+919563157811</a>
             <span style={{ color: "#9ca3af" }}>•</span>
             <a href="mailto:sumon38.sourabh@gmail.com" style={{ color: "#06b6d4", textDecoration: "none" }}>sumon38.sourabh@gmail.com</a>
             <span style={{ color: "#9ca3af" }}>•</span>
@@ -1072,7 +1072,7 @@ export default function Portfolio() {
 
         {/* FOOTER */}
         <footer style={{ textAlign: "center", padding: "2rem 1.5rem", borderTop: "1px solid rgba(6, 182, 212, 0.2)", marginTop: "3rem" }}>
-          <p style={{ fontSize: "0.875rem", color: "#6b7280" }}>© {new Date().getFullYear()} Sumon Sourabh Ghosh • Interactive Portfolio</p>
+          <p style={{ fontSize: "0.875rem", color: "#6b7280" }}>© {new Date().getFullYear()} Sumon Sourabh Ghosh </p>
         </footer>
       </div>
     </div>
