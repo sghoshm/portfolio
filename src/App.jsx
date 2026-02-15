@@ -214,8 +214,8 @@ export default function Portfolio() {
             {/* DOWNLOAD RESUME BUTTON */}
             <div style={{ textAlign: "center", margin: "1.5rem auto", maxWidth: "1100px" }}>
               <a 
-                href="/resume.pdf" 
-                download="Sumon_Sourabh_Ghosh_Resume.pdf"
+                href={selectedRole === "qa" ? "/resumeqa.pdf" : selectedRole === "dev" ? "/resumedev.pdf" : "/resumena.pdf"}
+                download={selectedRole === "qa" ? "Sumon_Sourabh_Ghosh_Resume_QA.pdf" : selectedRole === "dev" ? "Sumon_Sourabh_Ghosh_Resume_Dev.pdf" : "Sumon_Sourabh_Ghosh_Resume_NA.pdf"}
                 style={{
                   display: "inline-block",
                   background: "linear-gradient(135deg, #06b6d4, #3b82f6)",
