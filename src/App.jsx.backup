@@ -341,104 +341,52 @@ export default function Portfolio() {
             <h2 style={{ fontSize: "2.5rem", fontWeight: "900", color: "#06b6d4", marginBottom: "2rem" }}>Software Engineering Projects & Case Studies</h2>
 
             <div style={{ display: "grid", gap: "2rem" }}>
-              {(
-                selectedRole === "qa" ? [
-                  { 
-                    title: "Self-Hosted Video Streaming Platform", 
-                    period: "2020 - 2024", 
-                    desc: "Built and tested a Linux-based video streaming application deployed on a home server.",
-                    details: [
-                      "Designed test scenarios covering authentication, video playback, session handling, and failure cases.",
-                      "Performed deployment validation including SSL certificate verification and secure access testing.",
-                      "Conducted basic performance and scalability testing to identify server limitations.",
-                      "Validated secure traffic routing using Cloudflare DNS tunneling."
-                    ],
-                    learnings: ["Manual Testing", "SSL Verification", "API Testing", "Performance Testing", "Deployment Validation", "Cloudflare"] 
-                  },
-                  { 
-                    title: "Hand Gesture Controlled Mouse", 
-                    period: "2023", 
-                    desc: "Developed and tested a Python-based computer vision application for gesture recognition.",
-                    details: [
-                      "Designed test cases for gesture accuracy, latency, and edge-case behavior.",
-                      "Debugged inconsistent input issues by analyzing camera input and system behavior."
-                    ],
-                    learnings: ["Python Testing", "Edge Case Testing", "System Behavior Analysis", "Debugging"] 
-                  },
-                  { 
-                    title: "Voice-Controlled AI Assistant", 
-                    period: "2024", 
-                    desc: "Tested voice command recognition and response accuracy using speech-to-text and text-to-speech modules.",
-                    details: [
-                      "Validated API responses from OpenAI (GPT-3.5), including error and timeout handling.",
-                      "Tested system-level commands (shutdown, reboot) with safety validations.",
-                      "Packaged and tested the application as a standalone executable using PyInstaller."
-                    ],
-                    learnings: ["API Testing", "Voice Recognition Testing", "Error Handling", "System Commands"] 
-                  }
-                ] : selectedRole === "dev" ? [
-                  { 
-                    title: "Self-Hosted Video Streaming Platform", 
-                    period: "2020 - 2024", 
-                    desc: "Designed and built a self-hosted video streaming platform deployed on a Linux-based server.",
-                    details: [
-                      "Developed backend services for user authentication, media access, and session management.",
-                      "Implemented HTTPS security using SSL certificates and Cloudflare tunneling.",
-                      "Managed DNS routing, secure traffic flow, and server configuration.",
-                      "Performed load and scalability testing to identify performance bottlenecks.",
-                      "Owned end-to-end deployment, monitoring, and maintenance of the platform."
-                    ],
-                    learnings: ["Node.js Backend", "REST API Development", "SSL/HTTPS", "Cloudflare DNS", "Docker", "AWS"] 
-                  },
-                  { 
-                    title: "Hand Gesture Controlled Mouse", 
-                    period: "2023", 
-                    desc: "Developed a Python-based computer vision application for real-time gesture recognition.",
-                    details: [
-                      "Implemented gesture processing logic and system interaction handling.",
-                      "Optimized performance and handled edge cases for inconsistent input."
-                    ],
-                    learnings: ["Python", "Computer Vision", "System Interaction", "Performance Optimization"] 
-                  },
-                  { 
-                    title: "Voice-Controlled AI Assistant", 
-                    period: "2024", 
-                    desc: "Built a Python-based AI assistant integrating OpenAI (GPT-3.5) APIs.",
-                    details: [
-                      "Implemented speech recognition using Vosk and text-to-speech using pyttsx3.",
-                      "Designed backend logic to process commands and execute system-level actions.",
-                      "Handled API error cases, timeouts, and response validation.",
-                      "Packaged the application as a standalone executable using PyInstaller."
-                    ],
-                    learnings: ["Python Backend", "API Integration", "Voice Processing", "PyInstaller"] 
-                  }
-                ] : [
-                  { 
-                    title: "Self-Hosted Video Streaming Platform", 
-                    period: "2020 - 2024", 
-                    desc: "Designed, deployed, and maintained a Linux-based home server for video streaming services.",
-                    details: [
-                      "Configured SSL certificates and HTTPS access for secure communication.",
-                      "Implemented DNS routing and Cloudflare tunneling for external access.",
-                      "Managed user access, service uptime, and basic server monitoring.",
-                      "Performed scalability and load testing to evaluate system limits.",
-                      "Handled end-to-end server setup, maintenance, and troubleshooting."
-                    ],
-                    learnings: ["Linux Servers", "SSL/TLS Certificates", "DNS Management", "Cloudflare Tunneling", "Server Monitoring"] 
-                  },
-                  { 
-                    title: "Voice-Controlled System Automation Tool", 
-                    period: "2024", 
-                    desc: "Built a Python-based system automation tool capable of executing OS-level commands.",
-                    details: [
-                      "Tested system commands such as shutdown and reboot with safety checks.",
-                      "Validated application behavior under different system states.",
-                      "Packaged and deployed the tool as a standalone executable."
-                    ],
-                    learnings: ["System Automation", "Python", "Linux Commands", "Deployment"] 
-                  }
-                ]
-              ).map((proj, idx) => (
+              {[
+                { 
+                  title: "Self-Hosted Video Streaming Platform", 
+                  period: "2020-2024", 
+                  desc: "Built a self-hosted streaming server deployed on home desktop with full backend, frontend, and security implementation.",
+                  caseStudy: [
+                    { role: "🧪 QA Testing Angle", content: "Tested authentication & access control, load testing for multiple concurrent users, negative testing (invalid formats, broken streams), security testing (SSL, unauthorized access), performance testing, and regression cycles." },
+                    { role: "💻 Development Angle", content: "Designed and built React frontend, Node.js backend API, integrated Firebase auth, deployed with Docker, implemented CI/CD workflows." },
+                    { role: "🌐 Infrastructure Angle", content: "Home server deployment & maintenance, DNS management via Cloudflare, SSL certificate provisioning, firewall & access control, port forwarding & tunneling, service uptime monitoring." }
+                  ],
+                  learnings: ["Server Deployment", "SSL Certificates", "Cloudflare DNS Tunneling", "Backend/Frontend", "Security Hardening", "Performance Testing"] 
+                },
+                { 
+                  title: "Voice-Controlled AI Assistant", 
+                  period: "2023-2024", 
+                  desc: "Generative AI application using OpenAI's GPT-3.5 for real-time voice interactions and system command execution.",
+                  caseStudy: [
+                    { role: "🧪 QA Testing Angle", content: "Tested voice recognition accuracy, API response times, error handling, invalid voice commands, response validation against expected outputs, concurrency testing." },
+                    { role: "💻 Development Angle", content: "Integrated OpenAI API, implemented Vosk speech recognition, built Pyttsx3 text-to-speech, system command execution, Python backend, PyInstaller packaging." },
+                    { role: "🌐 Infrastructure Angle", content: "Local environment setup, system resource monitoring, cross-platform compatibility testing." }
+                  ],
+                  learnings: ["API Management", "Vosk & Pyttsx3", "System Commands", "PyInstaller", "AI Integration"] 
+                },
+                { 
+                  title: "Hardware Projects (IoT)", 
+                  period: "2020-2024", 
+                  desc: "Arduino-based projects: Fire Alarm System, Heartbeat Monitor, Smart Chair for auditoriums with sensor integration and real-time monitoring.",
+                  caseStudy: [
+                    { role: "🧪 QA Testing Angle", content: "Sensor accuracy testing, response time validation, edge case testing (extreme temperatures, low battery), field testing under real conditions." },
+                    { role: "💻 Development Angle", content: "Arduino firmware development, sensor libraries integration, data processing algorithms, real-time data collection." },
+                    { role: "🌐 Infrastructure Angle", content: "Device communication protocols, local network integration, data logging and storage." }
+                  ],
+                  learnings: ["Arduino", "Sensor Integration", "IoT Protocols", "Hardware Testing"] 
+                },
+                { 
+                  title: "Mobile Applications", 
+                  period: "2021-2023", 
+                  desc: "Android native apps: Photo Slideshow, TicTacToe Game, Flappy Bird Game with UI/UX optimization.",
+                  caseStudy: [
+                    { role: "🧪 QA Testing Angle", content: "UI responsiveness testing, game mechanics validation, edge case handling, device compatibility testing across Android versions." },
+                    { role: "💻 Development Angle", content: "Android Studio development, Java implementation, game logic, UI animations, lifecycle management." },
+                    { role: "🌐 Infrastructure Angle", content: "App deployment, APK optimization, device testing setup." }
+                  ],
+                  learnings: ["Android Studio", "Java", "Game Development", "UI/UX"] 
+                }
+              ].map((proj, idx) => (
                 <div key={idx} style={{
                   background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
                   border: "1px solid rgba(6, 182, 212, 0.3)", borderRadius: "1rem",
@@ -458,13 +406,15 @@ export default function Portfolio() {
                   </div>
                   <p style={{ color: "#d1d5db", marginBottom: "1.5rem" }}>{proj.desc}</p>
                   
-                  {/* Details by Role */}
-                  <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", marginBottom: "1.5rem", borderLeft: "4px solid #06b6d4" }}>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#d1d5db", lineHeight: "1.8" }}>
-                      {proj.details.map((detail, i) => (
-                        <li key={i} style={{ marginBottom: "0.5rem" }}>✓ {detail}</li>
-                      ))}
-                    </ul>
+                  {/* Case Study by Role */}
+                  <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", marginBottom: "1.5rem", borderLeft: "4px solid #a855f7" }}>
+                    <h4 style={{ color: "#a855f7", fontWeight: "700", marginBottom: "1rem" }}>📌 Multi-Role Case Study:</h4>
+                    {proj.caseStudy.map((study, i) => (
+                      <div key={i} style={{ marginBottom: i < proj.caseStudy.length - 1 ? "1rem" : 0 }}>
+                        <p style={{ color: "#06b6d4", fontSize: "0.9rem", fontWeight: "700", marginBottom: "0.5rem" }}>{study.role}</p>
+                        <p style={{ color: "#d1d5db", fontSize: "0.85rem", margin: 0 }}>{study.content}</p>
+                      </div>
+                    ))}
                   </div>
                   
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
@@ -549,9 +499,10 @@ export default function Portfolio() {
                 <h3 style={{ fontSize: "1.5rem", fontWeight: "900", color: "#06b6d4", marginBottom: "1.5rem" }}>🧪 QA Engineer Skills</h3>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
                   {[
-                    "Manual Testing", "Test Case Design & Execution", "Regression & Sanity Testing", "Defect Reporting & Validation",
-                    "Agile / Scrum Methodology", "API & Backend Validation", "Python Testing Scripts", "Linux Server Basics",
-                    "SSL & Security Verification", "Git & GitHub"
+                    "Manual Testing", "Test Case Design", "Bug Reporting", "Agile Methodology",
+                    "Test Planning", "Regression Testing", "Sanity Testing", "Load Testing",
+                    "Security Testing", "API Testing", "Test Documentation", "Jira & Tools",
+                    "Quality Assurance", "Test Execution", "Defect Analysis", "Requirements Analysis"
                   ].map((skill, idx) => (
                     <div key={idx} style={{
                       background: "rgba(6, 182, 212, 0.15)", border: "1px solid rgba(6, 182, 212, 0.3)",
@@ -581,9 +532,10 @@ export default function Portfolio() {
                 <h3 style={{ fontSize: "1.5rem", fontWeight: "900", color: "#3b82f6", marginBottom: "1.5rem" }}>💻 Developer Skills</h3>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
                   {[
-                    "Python", "JavaScript & Node.js", "REST API Development", "Backend Authentication & Authorization",
-                    "Linux Server Administration", "SSL / HTTPS Configuration", "Cloudflare DNS & Tunneling", "Docker & AWS",
-                    "Git & GitHub"
+                    "React & React Native", "Node.js Backend", "Firebase Integration", "AWS Development",
+                    "Python Programming", "Java (Android)", "Flutter Development", "Docker Containers",
+                    "API Development", "Database Design", "CI/CD Workflows", "Git Version Control",
+                    "REST APIs", "Generative AI", "Game Development", "Backend Deployment"
                   ].map((skill, idx) => (
                     <div key={idx} style={{
                       background: "rgba(59, 130, 246, 0.15)", border: "1px solid rgba(59, 130, 246, 0.3)",
@@ -613,9 +565,10 @@ export default function Portfolio() {
                 <h3 style={{ fontSize: "1.5rem", fontWeight: "900", color: "#a855f7", marginBottom: "1.5rem" }}>🌐 Network / System Admin Skills</h3>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
                   {[
-                    "Linux Server Administration", "Network Fundamentals (TCP/IP, DNS, HTTP/HTTPS)", "SSL / TLS Configuration", "Cloudflare DNS & Tunneling",
-                    "Server Deployment & Validation", "System Monitoring & Troubleshooting", "Backend Connectivity & API Validation", "Python (System Automation)",
-                    "Docker (Basics)", "AWS (Basic Infrastructure)", "Git & GitHub"
+                    "Server Deployment", "SSL Certificates", "DNS Management", "Cloudflare Configuration",
+                    "Port Forwarding", "Firewall & Access Control", "Network Tunneling", "Service Monitoring",
+                    "Backup Strategies", "System Hardening", "Uptime Monitoring", "AWS Basics",
+                    "Docker Deployment", "SSH & Security", "Performance Testing", "System Administration"
                   ].map((skill, idx) => (
                     <div key={idx} style={{
                       background: "rgba(168, 85, 247, 0.15)", border: "1px solid rgba(168, 85, 247, 0.3)",
@@ -830,7 +783,9 @@ export default function Portfolio() {
 
             <div style={{ display: "grid", gap: "1.5rem" }}>
               {[
-                { degree: "B.E / B.Tech in Electronics and Communication Engineering", school: "Sathyabama Institute of Science and Technology", period: "08/2018 - 09/2022" }
+                { degree: "B.E/B.Tech in Electronics & Communication", school: "Sathyabama Institute of Science and Technology", period: "08/2018 - 09/2022" },
+                { degree: "XII - Higher Secondary (Science + Maths)", school: "Kendriya Vidyalaya Birbhum", period: "2017 - 2018" },
+                { degree: "X - Secondary Board Examination (CBSE)", school: "Kendriya Vidyalaya Birbhum", period: "2016" }
               ].map((edu, idx) => (
                 <div key={idx} style={{
                   background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
