@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Github, MapPin, Phone, Bike, ArrowLeft, Briefcase, Code, BookOpen, Award, Heart, Database, Zap } from "lucide-react";
+import { Mail, Github, MapPin, Phone, Bike, ArrowLeft, Briefcase, Code, BookOpen, Award, Heart, Database, Zap, ExternalLink, Linkedin, Globe } from "lucide-react";
 import { useState } from "react";
 
 export default function Portfolio() {
@@ -16,6 +16,176 @@ export default function Portfolio() {
     infrastructure: "INFRASTRUCTURE & NETWORKING",
     contact: "CONTACT & AVAILABILITY"
   };
+
+  const allProjects = [
+    {
+      title: "Nexus OSINT Platform",
+      period: "2025 - 2026",
+      github: "https://github.com/sghoshm/nexus-osint",
+      release: "https://nexusint.netlify.app",
+      desc: {
+        qa: "Led validation and API integrity testing for a comprehensive, high-performance client-side OSINT intelligence engine.",
+        dev: "Developed a comprehensive, high-performance client-side OSINT intelligence engine aggregating data from 30+ public sources.",
+        network: "Developed the networking and intelligence gathering capabilities of a high-performance OSINT engine."
+      },
+      details: {
+        qa: [
+          "Validated real-world public API integrations against simulated data fallbacks.",
+          "Tested the proprietary 'Fake Filter' confidence scoring algorithm for edge cases and accuracy.",
+          "Performed UI/UX and functional testing on dynamic, motion-enhanced dashboard modules.",
+          "Verified data points across IP, Domain, Email, Crypto, Username, and Phone intelligence features."
+        ],
+        dev: [
+          "Built a robust, multi-module architecture for IP, Domain, Email, Crypto, and Phone intelligence.",
+          "Replaced simulated data with functional, real-world public API integrations.",
+          "Engineered a proprietary 'Fake Filter' for confidence scoring of intelligence data.",
+          "Designed a premium, dynamic, animated, and highly responsive user interface."
+        ],
+        network: [
+          "Integrated querying mechanisms for deep IP and Domain intelligence gathering.",
+          "Handled cross-origin requests and implemented secure connections to 30+ public data sources.",
+          "Managed client-side API limits, handling throttling, and optimizing network requests.",
+          "Contributed to data aggregation strategies for Crypto, Email, and Phone intelligence."
+        ]
+      },
+      learnings: {
+        qa: ["API Testing", "Data Validation", "Algorithm Testing", "UI/UX Validation"],
+        dev: ["React", "API Integrations", "OSINT", "UI/UX Design", "Data Aggregation"],
+        network: ["IP/Domain Intelligence", "Network Requests", "API Rate Limiting", "OSINT"]
+      }
+    },
+    {
+      title: "Interactive Developer Portfolio",
+      period: "2025",
+      github: "https://github.com/sghoshm/portfolio",
+      release: "https://sumon.online",
+      desc: {
+        qa: "Tested and validated an interactive, role-adaptive responsive web application.",
+        dev: "Designed and developed a highly interactive, animated, role-adaptive portfolio using React and Vite.",
+        network: "Deployed and managed the hosting infrastructure for a React-based interactive portfolio."
+      },
+      details: {
+        qa: [
+          "Verified responsive design across mobile, tablet, and desktop breakpoints.",
+          "Tested role-switching functionality (QA, Dev, NA) to ensure accurate cross-view data mapping.",
+          "Validated performance optimizations and external link routing."
+        ],
+        dev: [
+          "Architected a single-page application with dynamic data rendering based on user role selection.",
+          "Implemented fluid animations, glassmorphism UI, and custom hover effects using inline styling.",
+          "Integrated React-Lucide for scalable iconography and managed state via React Hooks."
+        ],
+        network: [
+          "Configured deployment pipelines and automated builds via Vite.",
+          "Managed domain, DNS handling, and HTTPS certificate configuration.",
+          "Optimized asset delivery and structural caching mechanisms."
+        ]
+      },
+      learnings: {
+        qa: ["Responsive Testing", "State Validation", "Cross-Browser Compatibility"],
+        dev: ["React Hooks", "Vite", "UI/UX Animation", "Dynamic Rendering"],
+        network: ["Vite Build Systems", "Web Hosting", "Asset Optimization"]
+      }
+    },
+    {
+      title: "Flappy Tori",
+      period: "2024",
+      github: "https://github.com/sghoshm/flappy-tori",
+      release: "https://flappytori.netlify.app/",
+      desc: {
+        qa: "Led functional and gameplay testing for a responsive browser-based arcade game.",
+        dev: "Built a Flappy Bird-style browser game using React, TypeScript, and Vite.",
+        network: "Ensured robust local data persistence and seamless deployment."
+      },
+      details: {
+        qa: [
+          "Validated collision detection algorithms and physics behaviors under varying difficulties (Easy, Medium, Hard).",
+          "Tested local storage mechanics ensuring high scores and top 3 leaderboards persisted between sessions.",
+          "Verified responsive scaling ensuring the playable area adapts correctly to mobile and desktop screens."
+        ],
+        dev: [
+          "Developed custom game loop and physics engine (gravity, pipe generation, collision).",
+          "Implemented a tiered difficulty system adjusting pipe gap sizes and speeds.",
+          "Engineered browser-local state persistence storing high scores and historical runs."
+        ],
+        network: [
+          "Delivered optimized production bundles reducing load times.",
+          "Managed browser DOM API integrations for optimal storage scaling.",
+          "Enabled smooth asset delivery pipelines for static game media."
+        ]
+      },
+      learnings: {
+        qa: ["Game Testing", "Physics Validation", "Local Storage Testing"],
+        dev: ["React", "TypeScript", "Game Loops", "Collision Math"],
+        network: ["Production Deployments", "LocalStorage Syncing"]
+      }
+    },
+    {
+      title: "Pokémon Arena",
+      period: "2024",
+      github: "https://github.com/sghoshm/pokemon-arena",
+      release: "https://pokemonsan.netlify.app/",
+      desc: {
+        qa: "Validated game state flow, battle logic, and victory conditions for a turn-based combat simulator.",
+        dev: "Developed a retro-style turn-based Pokémon battle simulator using React and NES.css.",
+        network: "Deployed and configured the application hosting on Netlify."
+      },
+      details: {
+        qa: [
+          "Tested complex turn-based logic ensuring accurate attack accuracy mapping and hit-point deductions.",
+          "Validated state constraints like minimum HP floors, attack use limits, and end-of-game reset flows.",
+          "Performed UI testing confirming NES.css styling rendered correctly across scenarios."
+        ],
+        dev: [
+          "Architected turn-by-turn state management governing the player and AI action phases.",
+          "Implemented RNG factors for combat mechanics (hit accuracy, critical variations) and Pokemon assignment.",
+          "Integrated audio feedback mapped to specific battle outcomes."
+        ],
+        network: [
+          "Configured Netlify continuous deployment tracking the main GitHub branch.",
+          "Resolved asset pathing ensuring attack sounds and sprites loaded cleanly over HTTPS.",
+          "Optimized delivery headers for low-latency browser experiences."
+        ]
+      },
+      learnings: {
+        qa: ["State Machine Testing", "RNG Validation", "Edge Case Handling"],
+        dev: ["State Management", "Retro UI (NES.css)", "Audio Integration"],
+        network: ["Netlify Deployments", "Asset Caching"]
+      }
+    },
+    {
+      title: "Hand Gesture Controlled Mouse",
+      period: "2023",
+      github: "https://github.com/sghoshm/hand-gesture-mouse",
+      desc: {
+        qa: "Developed and tested a computer vision application translating physical gestures to OS controls.",
+        dev: "Engineered a Python-based computer vision tool utilizing OpenCV for real-time gesture recognition.",
+        network: "Secured local hardware interfacing enabling direct camera-to-OS interactions."
+      },
+      details: {
+        qa: [
+          "Designed test cases measuring gesture accuracy, latency, and false-positive filtering.",
+          "Debugged inconsistent input edge-cases relating to lighting and varying background complexity.",
+          "Validated OS interaction accuracy (clicking, moving)."
+        ],
+        dev: [
+          "Implemented hand tracking landmarks converting coordinate spaces into accurate screen coordinates.",
+          "Developed smoothing algorithms reducing cursor jitter during real-world translations.",
+          "Mapped specific gesture subsets directly to system events like left/right click and drag."
+        ],
+        network: [
+          "Configured direct system hardware bindings securing peripheral inputs.",
+          "Analyzed memory footprint metrics ensuring long-running processes remained stable.",
+          "Containerized dependency paths establishing cross-platform environment consistency."
+        ]
+      },
+      learnings: {
+        qa: ["Computer Vision Testing", "Latency Monitoring", "Noise Reduction Validation"],
+        dev: ["Python", "OpenCV", "Mathematics", "System Interaction"],
+        network: ["Hardware Bindings", "Process Optimization"]
+      }
+    }
+  ];
 
   return (
     <div style={{ background: "#000000", color: "#ffffff", minHeight: "100vh", overflow: "hidden" }}>
@@ -121,10 +291,10 @@ export default function Portfolio() {
             {/* QUICK STATS ROW */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "1rem", marginBottom: "2rem", maxWidth: "1100px", margin: "0 auto 2rem auto", width: "100%" }}>
               {[
-                { stat: "1.7+", label: "Years Experience" },
-                { stat: "4", label: "Major Projects" },
-                { stat: "18+", label: "Tech Skills" },
-                { stat: "B.E.", label: "Degree Holder" }
+                { stat: "2", label: "Years Experience" },
+                { stat: "5", label: "Major Projects" },
+                { stat: "20+", label: "Tech Skills" },
+                { stat: "M.E. / B.E.", label: "Degree Holder" }
               ].map((item, idx) => (
                 <div key={idx} style={{
                   background: "rgba(6, 182, 212, 0.1)", border: "1px solid rgba(6, 182, 212, 0.3)",
@@ -142,25 +312,25 @@ export default function Portfolio() {
               <div style={{ display: "flex", justifyContent: "center", gap: "0.8rem", marginBottom: "1rem", flexWrap: "wrap" }}>
                 {[
                   // Common cards for all roles
-                  { id: "experience", icon: Briefcase, title: "Professional Experience", desc: "1.7 years at TCS", color: "#3b82f6", emoji: "💼", roles: ["qa", "dev", "network"] },
-                  { id: "projects", icon: Code, title: "Projects & Case Studies", desc: "4 major projects", color: "#06b6d4", emoji: "🚀", roles: ["qa", "dev", "network"] },
-                  
+                  { id: "experience", icon: Briefcase, title: "Professional Experience", desc: "2 years of Professional Experience", color: "#3b82f6", emoji: "💼", roles: ["qa", "dev", "network"] },
+                  { id: "projects", icon: Code, title: "Projects & Case Studies", desc: "5 major projects", color: "#06b6d4", emoji: "🚀", roles: ["qa", "dev", "network"] },
+
                   // QA-specific
                   { id: "qaArtifacts", icon: Award, title: "QA Artifacts", desc: "Test cases, reports", color: "#ec4899", emoji: "📋", roles: ["qa"] },
-                  
+
                   // Developer-specific
-                  
+
                   // Network/Admin-specific
                   { id: "infrastructure", icon: Database, title: "Infrastructure & Networking", desc: "Server, DNS, SSL", color: "#f43f5e", emoji: "🌐", roles: ["network"] },
-                  
+
                   // Common
-                  { id: "skills", icon: Zap, title: "Skills by Role", desc: "18+ technologies", color: "#a855f7", emoji: "⚡", roles: ["qa", "dev", "network"] },
-                  { id: "education", icon: BookOpen, title: "Education", desc: "B.E. Electronics", color: "#ec4899", emoji: "📚", roles: ["qa", "dev", "network"] },
+                  { id: "skills", icon: Zap, title: "Skills by Role", desc: "20+ technologies", color: "#a855f7", emoji: "⚡", roles: ["qa", "dev", "network"] },
+                  { id: "education", icon: BookOpen, title: "Education", desc: "M.E. / B.E.", color: "#ec4899", emoji: "📚", roles: ["qa", "dev", "network"] },
                   { id: "contact", icon: Mail, title: "Contact & Availability", desc: "Get in touch", color: "#f43f5e", emoji: "💌", roles: ["qa", "dev", "network"] }
                 ].filter(card => card.roles.includes(selectedRole)).map((card) => {
                   const Icon = card.icon;
                   return (
-                    <div 
+                    <div
                       key={card.id}
                       onClick={() => setCurrentPage(card.id)}
                       style={{
@@ -207,13 +377,13 @@ export default function Portfolio() {
             }}>
               <h3 style={{ fontSize: "1rem", fontWeight: "900", color: "#06b6d4", marginBottom: "0.8rem" }}>📋 PROFESSIONAL SUMMARY</h3>
               <p style={{ color: "#d1d5db", fontSize: "0.9rem", lineHeight: "1.6", margin: 0 }}>
-                {selectedRole === "qa" ? "QA Engineer with 1.7+ years of experience at Tata Consultancy Services, working in Agile environments on functional, regression, and deployment validation testing. Strong understanding of application workflows, backend behavior, APIs, and server-side systems. Hands-on experience with Python-based testing, defect tracking, and system-level validation, enabling effective root-cause analysis and high-quality software delivery." : selectedRole === "dev" ? "Backend / Platform Developer with 1.7+ years of experience at Tata Consultancy Services, working in Agile environments on backend services, deployments, and system-level applications. Hands-on experience with Node.js, Python, Linux servers, and secure application deployment. Strong understanding of backend workflows, APIs, authentication, and infrastructure validation, with a DevOps-leaning mindset and ownership of end-to-end deployments." : "Network / Systems Administrator with 1.7+ years of experience at Tata Consultancy Services, supporting server deployments, secure networking, and system-level operations. Hands-on experience with Linux servers, SSL/TLS configuration, DNS management, Cloudflare tunneling, and backend infrastructure validation. Strong understanding of system monitoring, deployment verification, and troubleshooting in production-like environments."}
+                {selectedRole === "qa" ? "Dedicated QA Engineer with 2 years of professional experience at Tata Consultancy Services (TCS) as an Assistant Systems Engineer, specializing in Agile-driven functional, regression, and deployment validation. Drawing upon a strong academic foundation—holding a B.E. and currently pursuing an M.E./M.Tech in Electronics and Communication Engineering—I possess a deep, structural understanding of application workflows, backend behavior, and server-side systems. Hands-on expertise with Python-based testing, dynamic API validation, and robust defect tracking enables me to conduct rigorous system-level validation, drive effective root-cause analysis, and consistently deliver high-quality, fault-tolerant software." : selectedRole === "dev" ? "Passionate Software Engineer with 2 years of professional experience at Tata Consultancy Services (TCS) as an Assistant Systems Engineer, architecting and building resilient backend services and interactive web platforms. Backed by a B.E. and an ongoing M.E./M.Tech in Electronics and Communication Engineering, I bring an analytical, engineering-first approach to software development. Equipped with hands-on expertise in React, Node.js, Python, and scalable Linux deployments, I specialize in forging comprehensive full-stack solutions. My DevOps-leaning mindset guarantees strong ownership of end-to-end deployments, secure API engineering, and optimized structural architecture." : "Strategic Network & Systems Administrator with 2 years of professional experience at Tata Consultancy Services (TCS) as an Assistant Systems Engineer, supporting mission-critical server deployments, secure infrastructural networking, and system-level operations. Grounded in a strong hardware and networking background via my B.E. and current M.E./M.Tech in Electronics and Communication Engineering, I am adept at bridging the gap between physical infrastructure and software architecture. My hands-on proficiency spans advanced Linux server environments, robust SSL/TLS security configurations, DNS management via Cloudflare tunneling, and proactive backend infrastructure validation, empowering seamless production-level reliability and extensive troubleshooting."}
               </p>
             </div>
 
             {/* DOWNLOAD RESUME BUTTON */}
             <div style={{ textAlign: "center", margin: "1.5rem auto", maxWidth: "1100px" }}>
-              <a 
+              <a
                 href={selectedRole === "qa" ? "/resumeqa.pdf" : selectedRole === "dev" ? "/resumedev.pdf" : "/resumena.pdf"}
                 download={selectedRole === "qa" ? "Sumon_Sourabh_Ghosh_Resume_QA.pdf" : selectedRole === "dev" ? "Sumon_Sourabh_Ghosh_Resume_Dev.pdf" : "Sumon_Sourabh_Ghosh_Resume_NA.pdf"}
                 style={{
@@ -247,7 +417,7 @@ export default function Portfolio() {
         {/* EXPERIENCE PAGE */}
         {currentPage === "experience" && (
           <div style={{ padding: "3rem 1.5rem" }}>
-            <button 
+            <button
               onClick={() => setCurrentPage("home")}
               style={{
                 display: "flex", alignItems: "center", gap: "0.5rem",
@@ -320,7 +490,7 @@ export default function Portfolio() {
         {/* PROJECTS PAGE */}
         {currentPage === "projects" && (
           <div style={{ padding: "3rem 1.5rem" }}>
-            <button 
+            <button
               onClick={() => setCurrentPage("home")}
               style={{
                 display: "flex", alignItems: "center", gap: "0.5rem",
@@ -341,138 +511,72 @@ export default function Portfolio() {
             <h2 style={{ fontSize: "2.5rem", fontWeight: "900", color: "#06b6d4", marginBottom: "2rem" }}>Software Engineering Projects & Case Studies</h2>
 
             <div style={{ display: "grid", gap: "2rem" }}>
-              {(
-                selectedRole === "qa" ? [
-                  { 
-                    title: "Self-Hosted Video Streaming Platform", 
-                    period: "2020 - 2024", 
-                    desc: "Built and tested a Linux-based video streaming application deployed on a home server.",
-                    details: [
-                      "Designed test scenarios covering authentication, video playback, session handling, and failure cases.",
-                      "Performed deployment validation including SSL certificate verification and secure access testing.",
-                      "Conducted basic performance and scalability testing to identify server limitations.",
-                      "Validated secure traffic routing using Cloudflare DNS tunneling."
-                    ],
-                    learnings: ["Manual Testing", "SSL Verification", "API Testing", "Performance Testing", "Deployment Validation", "Cloudflare"] 
-                  },
-                  { 
-                    title: "Hand Gesture Controlled Mouse", 
-                    period: "2023", 
-                    desc: "Developed and tested a Python-based computer vision application for gesture recognition.",
-                    details: [
-                      "Designed test cases for gesture accuracy, latency, and edge-case behavior.",
-                      "Debugged inconsistent input issues by analyzing camera input and system behavior."
-                    ],
-                    learnings: ["Python Testing", "Edge Case Testing", "System Behavior Analysis", "Debugging"] 
-                  },
-                  { 
-                    title: "Voice-Controlled AI Assistant", 
-                    period: "2024", 
-                    desc: "Tested voice command recognition and response accuracy using speech-to-text and text-to-speech modules.",
-                    details: [
-                      "Validated API responses from OpenAI (GPT-3.5), including error and timeout handling.",
-                      "Tested system-level commands (shutdown, reboot) with safety validations.",
-                      "Packaged and tested the application as a standalone executable using PyInstaller."
-                    ],
-                    learnings: ["API Testing", "Voice Recognition Testing", "Error Handling", "System Commands"] 
-                  }
-                ] : selectedRole === "dev" ? [
-                  { 
-                    title: "Self-Hosted Video Streaming Platform", 
-                    period: "2020 - 2024", 
-                    desc: "Designed and built a self-hosted video streaming platform deployed on a Linux-based server.",
-                    details: [
-                      "Developed backend services for user authentication, media access, and session management.",
-                      "Implemented HTTPS security using SSL certificates and Cloudflare tunneling.",
-                      "Managed DNS routing, secure traffic flow, and server configuration.",
-                      "Performed load and scalability testing to identify performance bottlenecks.",
-                      "Owned end-to-end deployment, monitoring, and maintenance of the platform."
-                    ],
-                    learnings: ["Node.js Backend", "REST API Development", "SSL/HTTPS", "Cloudflare DNS", "Docker", "AWS"] 
-                  },
-                  { 
-                    title: "Hand Gesture Controlled Mouse", 
-                    period: "2023", 
-                    desc: "Developed a Python-based computer vision application for real-time gesture recognition.",
-                    details: [
-                      "Implemented gesture processing logic and system interaction handling.",
-                      "Optimized performance and handled edge cases for inconsistent input."
-                    ],
-                    learnings: ["Python", "Computer Vision", "System Interaction", "Performance Optimization"] 
-                  },
-                  { 
-                    title: "Voice-Controlled AI Assistant", 
-                    period: "2024", 
-                    desc: "Built a Python-based AI assistant integrating OpenAI (GPT-3.5) APIs.",
-                    details: [
-                      "Implemented speech recognition using Vosk and text-to-speech using pyttsx3.",
-                      "Designed backend logic to process commands and execute system-level actions.",
-                      "Handled API error cases, timeouts, and response validation.",
-                      "Packaged the application as a standalone executable using PyInstaller."
-                    ],
-                    learnings: ["Python Backend", "API Integration", "Voice Processing", "PyInstaller"] 
-                  }
-                ] : [
-                  { 
-                    title: "Self-Hosted Video Streaming Platform", 
-                    period: "2020 - 2024", 
-                    desc: "Designed, deployed, and maintained a Linux-based home server for video streaming services.",
-                    details: [
-                      "Configured SSL certificates and HTTPS access for secure communication.",
-                      "Implemented DNS routing and Cloudflare tunneling for external access.",
-                      "Managed user access, service uptime, and basic server monitoring.",
-                      "Performed scalability and load testing to evaluate system limits.",
-                      "Handled end-to-end server setup, maintenance, and troubleshooting."
-                    ],
-                    learnings: ["Linux Servers", "SSL/TLS Certificates", "DNS Management", "Cloudflare Tunneling", "Server Monitoring"] 
-                  },
-                  { 
-                    title: "Voice-Controlled System Automation Tool", 
-                    period: "2024", 
-                    desc: "Built a Python-based system automation tool capable of executing OS-level commands.",
-                    details: [
-                      "Tested system commands such as shutdown and reboot with safety checks.",
-                      "Validated application behavior under different system states.",
-                      "Packaged and deployed the tool as a standalone executable."
-                    ],
-                    learnings: ["System Automation", "Python", "Linux Commands", "Deployment"] 
-                  }
-                ]
-              ).map((proj, idx) => (
+              {allProjects.map((proj, idx) => (
                 <div key={idx} style={{
                   background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
                   border: "1px solid rgba(6, 182, 212, 0.3)", borderRadius: "1rem",
-                  padding: "2rem", transition: "all 0.3s", cursor: "pointer"
+                  padding: "2rem", transition: "all 0.3s", cursor: "pointer",
+                  display: "flex", flexDirection: "column", height: "100%"
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateX(10px)";
-                  e.currentTarget.style.borderColor = "#06b6d4";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateX(0)";
-                  e.currentTarget.style.borderColor = "rgba(6, 182, 212, 0.3)";
-                }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "1rem" }}>
-                    <h3 style={{ fontSize: "1.5rem", fontWeight: "900", color: "#ffffff" }}>{proj.title}</h3>
-                    <span style={{ color: "#06b6d4", fontWeight: "700" }}>{proj.period}</span>
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-5px)";
+                    e.currentTarget.style.borderColor = "#06b6d4";
+                    e.currentTarget.style.boxShadow = "0 10px 30px rgba(6, 182, 212, 0.15)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.borderColor = "rgba(6, 182, 212, 0.3)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "1rem", flexWrap: "wrap", gap: "1rem" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
+                      <h3 style={{ fontSize: "1.5rem", fontWeight: "900", color: "#ffffff", margin: 0 }}>{proj.title}</h3>
+                      <div style={{ display: "flex", gap: "0.6rem", alignItems: "center" }}>
+                        {proj.github && (
+                          <a href={proj.github} target="_blank" rel="noopener noreferrer" style={{ color: "#a855f7", display: "flex", alignItems: "center", transition: "all 0.3s" }} title="GitHub Repository" onMouseEnter={(e) => { e.currentTarget.style.color = "#d8b4fe"; e.currentTarget.style.transform = "scale(1.1)" }} onMouseLeave={(e) => { e.currentTarget.style.color = "#a855f7"; e.currentTarget.style.transform = "scale(1)" }}>
+                            <Github size={20} />
+                          </a>
+                        )}
+                        {proj.release && (
+                          <a href={proj.release} target="_blank" rel="noopener noreferrer" style={{ color: "#3b82f6", display: "flex", alignItems: "center", transition: "all 0.3s" }} title="Live Release" onMouseEnter={(e) => { e.currentTarget.style.color = "#93c5fd"; e.currentTarget.style.transform = "scale(1.1)" }} onMouseLeave={(e) => { e.currentTarget.style.color = "#3b82f6"; e.currentTarget.style.transform = "scale(1)" }}>
+                            <ExternalLink size={20} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                    <span style={{ color: "#06b6d4", fontWeight: "700", whiteSpace: "nowrap" }}>{proj.period}</span>
                   </div>
-                  <p style={{ color: "#d1d5db", marginBottom: "1.5rem" }}>{proj.desc}</p>
-                  
+
+                  <p style={{ color: "#d1d5db", marginBottom: "1.5rem", lineHeight: "1.6", fontSize: "0.95rem" }}>
+                    {proj.desc[selectedRole]}
+                  </p>
+
                   {/* Details by Role */}
                   <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", marginBottom: "1.5rem", borderLeft: "4px solid #06b6d4" }}>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#d1d5db", lineHeight: "1.8" }}>
-                      {proj.details.map((detail, i) => (
-                        <li key={i} style={{ marginBottom: "0.5rem" }}>✓ {detail}</li>
+                    <ul style={{ listStyle: "none", padding: 0, margin: 0, color: "#cbd5e1", lineHeight: "1.8", fontSize: "0.9rem" }}>
+                      {proj.details[selectedRole].map((detail, i) => (
+                        <li key={i} style={{ marginBottom: "0.5rem", display: "flex", gap: "0.5rem" }}>
+                          <span style={{ color: "#06b6d4", fontWeight: "900", flexShrink: 0 }}>✓</span>
+                          <span>{detail}</span>
+                        </li>
                       ))}
                     </ul>
                   </div>
-                  
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
-                    {proj.learnings.map((learn, i) => (
+
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "auto" }}>
+                    {proj.learnings[selectedRole].map((learn, i) => (
                       <span key={i} style={{
-                        background: "rgba(6, 182, 212, 0.2)", color: "#06b6d4",
-                        padding: "0.4rem 1rem", borderRadius: "9999px", fontSize: "0.85rem"
-                      }}>
+                        background: "rgba(6, 182, 212, 0.15)", color: "#06b6d4",
+                        padding: "0.35rem 0.8rem", borderRadius: "9999px", fontSize: "0.8rem",
+                        fontWeight: "700", border: "1px solid rgba(6, 182, 212, 0.3)",
+                        transition: "all 0.3s"
+                      }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = "rgba(6, 182, 212, 0.3)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = "rgba(6, 182, 212, 0.15)";
+                        }}>
                         {learn}
                       </span>
                     ))}
@@ -486,7 +590,7 @@ export default function Portfolio() {
         {/* SKILLS PAGE */}
         {currentPage === "skills" && (
           <div style={{ padding: "3rem 1.5rem" }}>
-            <button 
+            <button
               onClick={() => setCurrentPage("home")}
               style={{
                 display: "flex", alignItems: "center", gap: "0.5rem",
@@ -558,16 +662,16 @@ export default function Portfolio() {
                       padding: "1.5rem", borderRadius: "0.75rem", textAlign: "center", cursor: "pointer",
                       transition: "all 0.3s"
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "scale(1.05)";
-                      e.currentTarget.style.background = "rgba(6, 182, 212, 0.3)";
-                      e.currentTarget.style.borderColor = "#06b6d4";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "scale(1)";
-                      e.currentTarget.style.background = "rgba(6, 182, 212, 0.15)";
-                      e.currentTarget.style.borderColor = "rgba(6, 182, 212, 0.3)";
-                    }}>
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.05)";
+                        e.currentTarget.style.background = "rgba(6, 182, 212, 0.3)";
+                        e.currentTarget.style.borderColor = "#06b6d4";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.background = "rgba(6, 182, 212, 0.15)";
+                        e.currentTarget.style.borderColor = "rgba(6, 182, 212, 0.3)";
+                      }}>
                       <p style={{ color: "#06b6d4", fontWeight: "700", fontSize: "1.05rem" }}>{skill}</p>
                     </div>
                   ))}
@@ -590,16 +694,16 @@ export default function Portfolio() {
                       padding: "1.5rem", borderRadius: "0.75rem", textAlign: "center", cursor: "pointer",
                       transition: "all 0.3s"
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "scale(1.05)";
-                      e.currentTarget.style.background = "rgba(59, 130, 246, 0.3)";
-                      e.currentTarget.style.borderColor = "#3b82f6";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "scale(1)";
-                      e.currentTarget.style.background = "rgba(59, 130, 246, 0.15)";
-                      e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.3)";
-                    }}>
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.05)";
+                        e.currentTarget.style.background = "rgba(59, 130, 246, 0.3)";
+                        e.currentTarget.style.borderColor = "#3b82f6";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.background = "rgba(59, 130, 246, 0.15)";
+                        e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.3)";
+                      }}>
                       <p style={{ color: "#3b82f6", fontWeight: "700", fontSize: "1.05rem" }}>{skill}</p>
                     </div>
                   ))}
@@ -622,16 +726,16 @@ export default function Portfolio() {
                       padding: "1.5rem", borderRadius: "0.75rem", textAlign: "center", cursor: "pointer",
                       transition: "all 0.3s"
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "scale(1.05)";
-                      e.currentTarget.style.background = "rgba(168, 85, 247, 0.3)";
-                      e.currentTarget.style.borderColor = "#a855f7";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "scale(1)";
-                      e.currentTarget.style.background = "rgba(168, 85, 247, 0.15)";
-                      e.currentTarget.style.borderColor = "rgba(168, 85, 247, 0.3)";
-                    }}>
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.05)";
+                        e.currentTarget.style.background = "rgba(168, 85, 247, 0.3)";
+                        e.currentTarget.style.borderColor = "#a855f7";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.background = "rgba(168, 85, 247, 0.15)";
+                        e.currentTarget.style.borderColor = "rgba(168, 85, 247, 0.3)";
+                      }}>
                       <p style={{ color: "#a855f7", fontWeight: "700", fontSize: "1.05rem" }}>{skill}</p>
                     </div>
                   ))}
@@ -644,7 +748,7 @@ export default function Portfolio() {
         {/* QA ARTIFACTS PAGE */}
         {currentPage === "qaArtifacts" && (
           <div style={{ padding: "3rem 1.5rem" }}>
-            <button 
+            <button
               onClick={() => setCurrentPage("home")}
               style={{
                 display: "flex", alignItems: "center", gap: "0.5rem",
@@ -677,16 +781,16 @@ export default function Portfolio() {
                   padding: "1.5rem", borderRadius: "0.75rem", textAlign: "center", cursor: "pointer",
                   transition: "all 0.3s"
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.05)";
-                  e.currentTarget.style.background = "rgba(236, 72, 153, 0.3)";
-                  e.currentTarget.style.borderColor = "#ec4899";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                  e.currentTarget.style.background = "rgba(236, 72, 153, 0.15)";
-                  e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
-                }}>
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                    e.currentTarget.style.background = "rgba(236, 72, 153, 0.3)";
+                    e.currentTarget.style.borderColor = "#ec4899";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.background = "rgba(236, 72, 153, 0.15)";
+                    e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
+                  }}>
                   <p style={{ fontSize: "1.8rem", fontWeight: "900", color: "#ec4899", marginBottom: "0.5rem" }}>{item.metric}</p>
                   <p style={{ color: "#d1d5db", fontWeight: "600", fontSize: "0.9rem" }}>{item.label}</p>
                 </div>
@@ -700,14 +804,14 @@ export default function Portfolio() {
                 border: "1px solid rgba(236, 72, 153, 0.3)", borderRadius: "1rem",
                 padding: "2rem", transition: "all 0.3s"
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.borderColor = "#ec4899";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
-              }}>
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.borderColor = "#ec4899";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
+                }}>
                 <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#ec4899", marginBottom: "1.5rem" }}>📄 Sample Test Cases</h3>
                 <div style={{ display: "grid", gap: "1rem" }}>
                   {[
@@ -733,14 +837,14 @@ export default function Portfolio() {
                 border: "1px solid rgba(236, 72, 153, 0.3)", borderRadius: "1rem",
                 padding: "2rem", transition: "all 0.3s"
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.borderColor = "#ec4899";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
-              }}>
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.borderColor = "#ec4899";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
+                }}>
                 <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#ec4899", marginBottom: "1.5rem" }}>🐞 Sample Bug Report</h3>
                 <div style={{ display: "grid", gap: "1rem" }}>
                   <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", borderLeft: "4px solid #f43f5e" }}>
@@ -776,14 +880,14 @@ export default function Portfolio() {
                 border: "1px solid rgba(236, 72, 153, 0.3)", borderRadius: "1rem",
                 padding: "2rem", transition: "all 0.3s"
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.borderColor = "#ec4899";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
-              }}>
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.borderColor = "#ec4899";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
+                }}>
                 <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#ec4899", marginBottom: "1.5rem" }}>📋 Test Plan Overview</h3>
                 <div style={{ display: "grid", gap: "1rem" }}>
                   {[
@@ -808,7 +912,7 @@ export default function Portfolio() {
         {/* EDUCATION PAGE */}
         {currentPage === "education" && (
           <div style={{ padding: "3rem 1.5rem" }}>
-            <button 
+            <button
               onClick={() => setCurrentPage("home")}
               style={{
                 display: "flex", alignItems: "center", gap: "0.5rem",
@@ -830,26 +934,40 @@ export default function Portfolio() {
 
             <div style={{ display: "grid", gap: "1.5rem" }}>
               {[
-                { degree: "B.E / B.Tech in Electronics and Communication Engineering", school: "Sathyabama Institute of Science and Technology", period: "08/2018 - 09/2022" }
+                { 
+                  degree: "B.E / B.Tech in Electronics and Communication Engineering", 
+                  school: "Sathyabama Institute of Science and Technology", 
+                  period: "08/2018 - 09/2022",
+                  desc: "Cultivated a rigorous foundational understanding of digital systems, microprocessors, and network communications. This undergraduate program heavily emphasized circuit design, telecommunications, and signal processing, providing the critical hardware-level context necessary for my current work in full-stack architecture and system administration. Actively engaged in laboratory projects bridging hardware components with embedded software logic, laying the groundwork for robust logical troubleshooting and analytical problem-solving in production software environments." 
+                },
+                { 
+                  degree: "M.E / M.Tech in Electronics and Communication Engineering", 
+                  school: "Bengal Institute of Technology and Management", 
+                  period: "08/2024 - 08/2026",
+                  desc: "Currently advancing my overarching engineering expertise with a focused Master's degree, diving deeper into advanced communication networks, VLSI design, and modern digital signal processing. This academic pursuit tightly aligns with my professional trajectory in software and systems networking, seamlessly bridging theoretical high-frequency communications with practical, cloud-based networking and secure server infrastructure. The rigorous curriculum heavily enhances my ability to design fault-tolerant systems, perform deep-level network validations, and optimize complex data architectures at an institutional scale." 
+                }
               ].map((edu, idx) => (
                 <div key={idx} style={{
                   background: "rgba(15, 23, 42, 0.7)", backdropFilter: "blur(10px)",
                   border: "1px solid rgba(236, 72, 153, 0.3)", borderRadius: "1rem",
                   padding: "2rem", transition: "all 0.3s"
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-5px)";
-                  e.currentTarget.style.borderColor = "#ec4899";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
-                }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "0.75rem" }}>
-                    <h3 style={{ fontSize: "1.25rem", fontWeight: "900", color: "#ffffff" }}>{edu.degree}</h3>
-                    <span style={{ color: "#ec4899", fontWeight: "700" }}>{edu.period}</span>
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-5px)";
+                    e.currentTarget.style.borderColor = "#ec4899";
+                    e.currentTarget.style.boxShadow = "0 10px 30px rgba(236, 72, 153, 0.15)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.borderColor = "rgba(236, 72, 153, 0.3)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "0.75rem", flexWrap: "wrap", gap: "1rem" }}>
+                    <h3 style={{ fontSize: "1.25rem", fontWeight: "900", color: "#ffffff", margin: 0 }}>{edu.degree}</h3>
+                    <span style={{ color: "rgba(236, 72, 153, 0.9)", fontWeight: "800", background: "rgba(236, 72, 153, 0.15)", padding: "0.3rem 0.8rem", borderRadius: "99px", fontSize: "0.85rem", whiteSpace: "nowrap" }}>{edu.period}</span>
                   </div>
-                  <p style={{ color: "#a855f7", fontWeight: "700" }}>{edu.school}</p>
+                  <p style={{ color: "#a855f7", fontWeight: "800", marginBottom: "1rem", borderLeft: "3px solid #a855f7", paddingLeft: "0.75rem" }}>{edu.school}</p>
+                  <p style={{ color: "#d1d5db", fontSize: "0.95rem", lineHeight: "1.7" }}>{edu.desc}</p>
                 </div>
               ))}
             </div>
@@ -859,7 +977,7 @@ export default function Portfolio() {
         {/* INFRASTRUCTURE & NETWORKING PAGE */}
         {currentPage === "infrastructure" && (
           <div style={{ padding: "3rem 1.5rem" }}>
-            <button 
+            <button
               onClick={() => setCurrentPage("home")}
               style={{
                 display: "flex", alignItems: "center", gap: "0.5rem",
@@ -886,14 +1004,14 @@ export default function Portfolio() {
                 border: "1px solid rgba(244, 63, 94, 0.3)", borderRadius: "1rem",
                 padding: "2rem", transition: "all 0.3s"
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.borderColor = "#f43f5e";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
-              }}>
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.borderColor = "#f43f5e";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+                }}>
                 <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#f43f5e", marginBottom: "1.5rem" }}>🖥️ Home Server Deployment & Maintenance</h3>
                 <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
                   <ul style={{ listStyle: "none", padding: 0, color: "#d1d5db", lineHeight: "2" }}>
@@ -912,14 +1030,14 @@ export default function Portfolio() {
                 border: "1px solid rgba(244, 63, 94, 0.3)", borderRadius: "1rem",
                 padding: "2rem", transition: "all 0.3s"
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.borderColor = "#f43f5e";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
-              }}>
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.borderColor = "#f43f5e";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+                }}>
                 <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#f43f5e", marginBottom: "1.5rem" }}>☁️ DNS Management (Cloudflare)</h3>
                 <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
                   <ul style={{ listStyle: "none", padding: 0, color: "#d1d5db", lineHeight: "2" }}>
@@ -938,14 +1056,14 @@ export default function Portfolio() {
                 border: "1px solid rgba(244, 63, 94, 0.3)", borderRadius: "1rem",
                 padding: "2rem", transition: "all 0.3s"
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.borderColor = "#f43f5e";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
-              }}>
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.borderColor = "#f43f5e";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+                }}>
                 <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#f43f5e", marginBottom: "1.5rem" }}>🔒 SSL Certificate Provisioning</h3>
                 <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
                   <ul style={{ listStyle: "none", padding: 0, color: "#d1d5db", lineHeight: "2" }}>
@@ -964,14 +1082,14 @@ export default function Portfolio() {
                 border: "1px solid rgba(244, 63, 94, 0.3)", borderRadius: "1rem",
                 padding: "2rem", transition: "all 0.3s"
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.borderColor = "#f43f5e";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
-              }}>
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.borderColor = "#f43f5e";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+                }}>
                 <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#f43f5e", marginBottom: "1.5rem" }}>🔐 Firewall & Access Control</h3>
                 <div style={{ background: "rgba(15, 23, 42, 0.5)", padding: "1.5rem", borderRadius: "0.75rem", borderLeft: "4px solid #06b6d4" }}>
                   <ul style={{ listStyle: "none", padding: 0, color: "#d1d5db", lineHeight: "2" }}>
@@ -990,14 +1108,14 @@ export default function Portfolio() {
                 border: "1px solid rgba(244, 63, 94, 0.3)", borderRadius: "1rem",
                 padding: "2rem", transition: "all 0.3s"
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.borderColor = "#f43f5e";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
-              }}>
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.borderColor = "#f43f5e";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+                }}>
                 <h3 style={{ fontSize: "1.3rem", fontWeight: "900", color: "#f43f5e", marginBottom: "1.5rem" }}>📹 Case Study: Home Media Server Architecture</h3>
                 <div style={{ display: "grid", gap: "1rem" }}>
                   {[
@@ -1029,16 +1147,16 @@ export default function Portfolio() {
                     padding: "1.5rem", borderRadius: "0.75rem", textAlign: "center", cursor: "pointer",
                     transition: "all 0.3s"
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "scale(1.05)";
-                    e.currentTarget.style.background = "rgba(244, 63, 94, 0.3)";
-                    e.currentTarget.style.borderColor = "#f43f5e";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "scale(1)";
-                    e.currentTarget.style.background = "rgba(244, 63, 94, 0.15)";
-                    e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
-                  }}>
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.05)";
+                      e.currentTarget.style.background = "rgba(244, 63, 94, 0.3)";
+                      e.currentTarget.style.borderColor = "#f43f5e";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.background = "rgba(244, 63, 94, 0.15)";
+                      e.currentTarget.style.borderColor = "rgba(244, 63, 94, 0.3)";
+                    }}>
                     <p style={{ fontSize: "1.8rem", fontWeight: "900", color: "#f43f5e", marginBottom: "0.5rem" }}>{item.metric}</p>
                     <p style={{ color: "#d1d5db", fontWeight: "600", fontSize: "0.9rem" }}>{item.label}</p>
                   </div>
@@ -1051,7 +1169,7 @@ export default function Portfolio() {
         {/* CONTACT PAGE */}
         {currentPage === "contact" && (
           <div style={{ padding: "3rem 1.5rem" }}>
-            <button 
+            <button
               onClick={() => setCurrentPage("home")}
               style={{
                 display: "flex", alignItems: "center", gap: "0.5rem",
@@ -1076,6 +1194,8 @@ export default function Portfolio() {
                 { icon: Phone, label: "Phone", value: "+919563157811", href: "tel:+919563157811", color: "#06b6d4" },
                 { icon: Mail, label: "Email", value: "sumon38.sourabh@gmail.com", href: "mailto:sumon38.sourabh@gmail.com", color: "#3b82f6" },
                 { icon: Github, label: "GitHub", value: "github.com/sghoshm", href: "https://github.com/sghoshm", color: "#a855f7" },
+                { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/sumonsourabhghosh", href: "https://www.linkedin.com/in/sumonsourabhghosh/", color: "#0ea5e9" },
+                { icon: Globe, label: "Website", value: "sumon.online", href: "https://sumon.online", color: "#10b981" },
                 { icon: MapPin, label: "Location", value: "Suri, Birbhum, India", href: null, color: "#ec4899" },
                 { icon: Heart, label: "Passion", value: "Bike Riding", href: null, color: "#f43f5e" }
               ].map((contact, idx) => {
@@ -1089,16 +1209,16 @@ export default function Portfolio() {
                       display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
                       transition: "all 0.3s", cursor: "pointer"
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "scale(1.05)";
-                      e.currentTarget.style.borderColor = contact.color;
-                      e.currentTarget.style.background = "rgba(15, 23, 42, 0.9)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "scale(1)";
-                      e.currentTarget.style.borderColor = contact.color + "33";
-                      e.currentTarget.style.background = "rgba(15, 23, 42, 0.7)";
-                    }}>
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.05)";
+                        e.currentTarget.style.borderColor = contact.color;
+                        e.currentTarget.style.background = "rgba(15, 23, 42, 0.9)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.borderColor = contact.color + "33";
+                        e.currentTarget.style.background = "rgba(15, 23, 42, 0.7)";
+                      }}>
                       <div style={{ padding: "1.5rem", background: `linear-gradient(135deg, ${contact.color}22, ${contact.color}44)`, borderRadius: "1rem", marginBottom: "1rem" }}>
                         <Icon size={40} color={contact.color} />
                       </div>
@@ -1115,16 +1235,16 @@ export default function Portfolio() {
                       display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
                       transition: "all 0.3s"
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "scale(1.05)";
-                      e.currentTarget.style.borderColor = contact.color;
-                      e.currentTarget.style.background = "rgba(15, 23, 42, 0.9)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "scale(1)";
-                      e.currentTarget.style.borderColor = contact.color + "33";
-                      e.currentTarget.style.background = "rgba(15, 23, 42, 0.7)";
-                    }}>
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.05)";
+                        e.currentTarget.style.borderColor = contact.color;
+                        e.currentTarget.style.background = "rgba(15, 23, 42, 0.9)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.borderColor = contact.color + "33";
+                        e.currentTarget.style.background = "rgba(15, 23, 42, 0.7)";
+                      }}>
                       <div style={{ padding: "1.5rem", background: `linear-gradient(135deg, ${contact.color}22, ${contact.color}44)`, borderRadius: "1rem", marginBottom: "1rem" }}>
                         <Icon size={40} color={contact.color} />
                       </div>
