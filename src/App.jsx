@@ -15,6 +15,22 @@ export default function Portfolio() {
 
   const allProjects = [
     {
+      title: "applier.cloud — AI Resume Builder SaaS",
+      period: "2025 – Present",
+      github: "https://github.com/sghoshm/applier.cloud",
+      release: "https://applier-cloud.netlify.app",
+      description: "Full-stack AI-powered SaaS that tailors resumes and generates cover letters from job descriptions using LLM inference — built and deployed at zero infrastructure cost.",
+      details: [
+        "Architected full MERN stack SaaS with JWT + Google OAuth 2.0 authentication, refresh token rotation, and Passport.js",
+        "Integrated Groq LLM API (Llama 3.3 70B) for AI resume tailoring, cover letter generation, and ATS score analysis",
+        "Built PDF parsing pipeline using pdf2json with AI-assisted structured section extraction",
+        "Implemented PDF export using @react-pdf/renderer with dynamic resume templates",
+        "Designed freemium pricing model (Free/Pro/Elite) with AI credit system and plan-gating middleware",
+        "Deployed backend on Render and frontend on Netlify with CI/CD via GitHub at $0/month infrastructure cost"
+      ],
+      skills: ["MongoDB", "Express.js", "React", "Node.js", "Groq API", "Llama 3.3 70B", "JWT", "Google OAuth", "Passport.js", "Zustand", "React Query", "pdf2json", "@react-pdf/renderer", "Render", "Netlify"]
+    },
+    {
       title: "OpenEarth – Data Aggregation & Visualization Platform",
       period: "2025 – Present",
       github: "https://github.com/sghoshm/open-earth",
@@ -170,7 +186,7 @@ export default function Portfolio() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "1rem", marginBottom: "2rem", maxWidth: "1000px", margin: "0 auto 2rem auto" }}>
               {[
                 { stat: "2", label: "Years Experience" },
-                { stat: "5", label: "Key Projects" },
+                { stat: "6", label: "Key Projects" },
                 { stat: "20+", label: "Tech Skills" },
                 { stat: "300+", label: "Test Cases" }
               ].map((item, idx) => (
