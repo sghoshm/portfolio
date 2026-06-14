@@ -115,12 +115,12 @@ qa-portfolio/
 - Key achievements and skills used
 
 ### Projects Page
-- 4 major projects with descriptions
+- 6 major projects with descriptions
 - Technologies and tools used for each project
 - Project highlights and outcomes
 
 ### Skills Page
-- 18+ technical skills organized by category
+- 20+ technical skills organized by category
 - Proficiency levels and expertise areas
 - Technologies and frameworks
 
